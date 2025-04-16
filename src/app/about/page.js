@@ -85,11 +85,22 @@ export default function About() {
             <GlowingEffectDemoSecond />
         </div>
 
-        <div className="px-4 my-16 grid grid-cols-2 gap-4">
+        <div className="px-4 my-16 grid grid-cols-2 gap-4 mb-20">
 
             <div className="text-white p-5 text-2xl flex flex-col items-center rounded-3xl gap-4">
 
-                <div className="max-w-md mx-auto">
+                <div className="w-full max-w-md mx-auto">
+                    <div className="rounded-[50px] text-white px-8 py-10 transition-all duration-300 bg-black hover:bg-[#C9B99F] hover:shadow-xl">
+                        <h2 className="text-3xl font-bold text-right leading-tight">
+                            FAST TURN<br />AROUND TIME
+                        </h2>
+                        <p className="mt-6 text-left text-white/90 font-base text-base">
+                            We fix most issues within 24 hours.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="w-full max-w-md ">
                     <div className="rounded-[50px] text-white px-8 py-10 transition-all duration-300 bg-black hover:bg-[#C9B99F] hover:shadow-xl">
                         <h2 className="text-3xl font-bold text-right leading-tight">
                             EXPERT<br />TECHNICIANS
@@ -102,28 +113,13 @@ export default function About() {
                     </div>
                 </div>
 
-                <div className="max-w-md mx-auto">
+                <div className="w-full max-w-md mx-auto">
                     <div className="rounded-[50px] text-white px-8 py-10 transition-all duration-300 bg-black hover:bg-[#C9B99F] hover:shadow-xl">
                         <h2 className="text-3xl font-bold text-right leading-tight">
-                            EXPERT<br />TECHNICIANS
+                            NO SOLUTION?<br />NO CHARGE!
                         </h2>
                         <p className="mt-6 text-left text-white/90 font-base text-base">
-                            30+ years of experience handling MacBooks,
-                            <br />
-                            gaming PCs, and high-end devices.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="max-w-md mx-auto">
-                    <div className="rounded-[50px] text-white px-8 py-10 transition-all duration-300 bg-black hover:bg-[#C9B99F] hover:shadow-xl">
-                        <h2 className="text-3xl font-bold text-right leading-tight">
-                            EXPERT<br />TECHNICIANS
-                        </h2>
-                        <p className="mt-6 text-left text-white/90 font-base text-base">
-                            30+ years of experience handling MacBooks,
-                            <br />
-                            gaming PCs, and high-end devices.
+                            You only pay if we solve the problem.
                         </p>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ const VisitUsOffline = () => {
               <Mail className="text-primary w-6 h-6 mt-1" />
               <div>
                 <p className="font-semibold">Email</p>
-                <p>divvycomputronix@contactus.com</p>
+                <p>contactus@divvycomputronix.com</p>
               </div>
             </div>
           </div>
