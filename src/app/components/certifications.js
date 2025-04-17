@@ -15,15 +15,19 @@ export function InfiniteMovingCardsDemo() {
 
 const testimonials = [
   {
+    name:"1",
     image: "/certs/msme.png"
   },
   {
+    name:"2",
     image: "certs/iso-cert.png"
   },
   {
+    name:"3",
     image: "/certs/msme.png"
   },
   {
+    name:"4",
     image: "certs/iso-cert.png"
   },
   
