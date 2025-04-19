@@ -21,7 +21,7 @@ export function SignupFormDemo() {
         Get your device repaired instantly
       </h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-        Contact us via this form and we'll get back to you as soon as possible!
+        Contact us via this form and we&apos;ll get back to you as soon as possible!
       </p>
       <form className="my-8" onSubmit={handleSubmit}>
         <div

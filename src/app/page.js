@@ -1,5 +1,4 @@
 "use client"
-import Navbar from "./components/navbar";
 import Testimonials from "./components/Testimonials";
 import Image from "next/image";
 import CallToAction from "./components/callToAction";
@@ -35,10 +34,13 @@ export default function Home() {
             </div>
 
             <div className="hidden md:block">
-              <img
+              <Image
+                
                 src="/hero-illustration.png"
                 alt="Hero Illustration"
                 className="rounded-2xl shadow-lg"
+                width={500}
+                height={500}
               />
             </div>
           </div>
@@ -125,9 +127,13 @@ export default function Home() {
         {/* Signup */}
         <div className="flex w-full gap-6 items-center justify-center">
           <div className="flex items-center justify-center gap-16 px-6">
-            <img
+            
+            <Image
               src="/broken-laptop.jpg"
               className="w-1/4 rounded-2xl h-1/2 object-cover" 
+              alt="broken surface contact image"
+              width={1000}
+              height={1000}
             />
             <SignupFormDemo />
           </div>

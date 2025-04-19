@@ -1,10 +1,10 @@
-import {BentoGridThirdDemo} from "../components/bentogrid";
-export default function servuces() {
+import {BentoGridSecondDemo} from "../components/bentogrid";
+export default function services() {
     return (
         <>
         <div className="bg-[#EEEEEE] py-16 px-6">
         <div className="max-w-7xl mx-auto my-10">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16 mt-20">
           <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 text-sm bg-white px-3 py-1 rounded-full shadow text-black">
               🛠️ Our services
@@ -19,14 +19,14 @@ export default function servuces() {
 
           <a
             href="/contact"
-            className="bg-[#C155F2]/90 text-white px-6 py-3 rounded-full text-sm font-medium shadow-md hover:bg-[#C155F2] transition"
+            className="bg-[#C155F2]/90 text-white px-6 py-3 rounded-full text-xl shadow-md hover:bg-[#C155F2] transition"
           >
-            See our services ↗
+            Repair now ↗
           </a>
         </div>
 
         <div className="h-auto mt-auto w-full flex items-center justify-center">
-                        <BentoGridThirdDemo />
+                        <BentoGridSecondDemo />
                     </div>
         </div>
         </div>

@@ -9,7 +9,7 @@ const VisitUsOffline = () => {
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Us Offline</h2>
           <p className="text-gray-600 mb-6">
-            We'd love to meet you in person! Stop by our office during business hours or give us a call to schedule a visit.
+            We&apos;d love to meet you in person! Stop by our office during business hours or give us a call to schedule a visit.
           </p>
           <div className="space-y-4 text-gray-700">
             <div className="flex items-start gap-3">

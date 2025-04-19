@@ -25,6 +25,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from 'next/link'
+
 
 const Navbar = () => {
   const [bgColor, setBgColor] = useState("bg-gray-500 bg-opacity-10 backdrop-blur backdrop-filter backdrop-saturate-100 backdrop-contrast-100");
@@ -66,25 +68,17 @@ const Navbar = () => {
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold">
             DivComp.
-          </a>
+          </Link>
         </div>
 
         {/* Nav Links */}
         <div className="flex items-center">
-          <a href="/contact" className="text-md ml-10">
-            FAQs
-          </a>
-          <a href="/contact" className="text-md ml-10">
-            Services
-          </a>
-          <a href="/about" className="text-md ml-10">
-            About
-          </a>
-          <a href="/contact" className="text-md ml-10">
-            Contact
-          </a>
+          <Link href="/#faq" className="text-md ml-10">FAQs</Link>
+          <Link href="/services" className="text-md ml-10">Services</Link>
+          <Link href="/about" className="text-md ml-10">About</Link>
+          <Link href="/contact" className="text-md ml-10">Contact</Link>
         </div>
       </div>
     </nav>

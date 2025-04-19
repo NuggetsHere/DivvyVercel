@@ -14,7 +14,6 @@ module.exports = {
   		fontFamily: {
   			nebulica: [
   				'Nebulica',
-  				'serif'
   			],
   			sf: [
   				'SFpro',
