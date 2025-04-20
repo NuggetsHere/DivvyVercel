@@ -1,5 +1,5 @@
 import {BentoGridSecondDemo} from "../components/bentogrid";
-export default function services() {
+export default function Services() {
     return (
         <>
         <div className="bg-[#EEEEEE] py-16 px-6">
