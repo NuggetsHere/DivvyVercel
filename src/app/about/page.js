@@ -22,7 +22,7 @@ export default function About() {
                     </span>
                 </h1>
 
-                <p className="mt-8 text-lg text-right text-gray-700 max-w-xl tracking-tighter font-medium">
+                <p className="mt-8 text-lg text-right text-gray-700 max-w-xl tracking-tighter font-medium ml-20">
                     At Divvy Computronix, we have been providing professional laptop and computer repair services since 2009. What started as a small repair shop has now grown into a one-stop solution for all device repairs, refurbishments, and sales.
                 </p>
             </div>
@@ -43,19 +43,19 @@ export default function About() {
             <div className="flex gap-4 justify-between text-left text-black font-medium">
                 <div>
                 <div className="text-2xl font-bold">
-                    30<span className="text-purple-500">+</span>
+                    30<span className="text-purple-500">Y+</span>
                 </div>
-                <div className="text-xs uppercase tracking-wide">Years Experience</div>
+                <div className="text-xs uppercase tracking-wide">Experience</div>
                 </div>
                 <div>
                 <div className="text-2xl font-bold">
-                    10<span className="text-purple-500">L+</span>
+                    1<span className="text-purple-500">L+</span>
                 </div>
                 <div className="text-xs uppercase tracking-wide">Customers Satisfied</div>
                 </div>
                 <div>
                 <div className="text-2xl font-bold">
-                    50<span className="text-purple-500">L+</span>
+                    80<span className="text-purple-500">K+</span>
                 </div>
                 <div className="text-xs uppercase tracking-wide">Repaired Devices</div>
                 </div>
@@ -85,7 +85,7 @@ export default function About() {
             <GlowingEffectDemoSecond />
         </div>
 
-        <div className="px-4 my-16 grid grid-cols-2 gap-4 mb-20">
+        {/* <div className="px-4 my-16 grid grid-cols-2 gap-4 mb-20">
 
             <div className="text-white p-5 text-2xl flex flex-col items-center rounded-3xl gap-4">
 
@@ -126,7 +126,6 @@ export default function About() {
 
             </div>
 
-            {/* another column for an image that will cover the entire area */}
             <div className="relative w-5/6 h-full">
                 <img
                 src="/imac.jpg"
@@ -135,11 +134,11 @@ export default function About() {
                 />
             </div>
 
-        </div>
+        </div> */}
 
         <TimelineDemo />
 
-        <section className="max-w-5xl mx-auto my-12 px-6">
+        <section className="max-w-6xl mx-auto my-12 px-6">
             <div className="relative rounded-[50px] overflow-hidden bg-black text-white shadow-xl">
 
                 {/* Background Image Layer with Blur */}

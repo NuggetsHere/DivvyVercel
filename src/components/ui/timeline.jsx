@@ -29,11 +29,11 @@ export const Timeline = ({
       className="w-full bg-white dark:bg-neutral-950 md:px-10 m-autos"
       ref={containerRef}>
       <div className=" py-10   px-4 md:px-8 lg:px-10">
-        <h2 className="flex justify-center text-lg md:text-7xl mb-4 text-black dark:text-white w-full">
+        <h2 className="flex justify-center text-3xl md:text-7xl mb-4 text-black dark:text-white w-full">
           Our Journey
         </h2>
         <p
-          className="flex justify-center text-neutral-700 dark:text-neutral-300 text-xl w-full">
+          className=" text-center text-neutral-700 dark:text-neutral-300 text-xl lg:text-2xl w-full">
           From humble beginnings to&nbsp;<span className="text-purple-500">industry expertise </span>&nbsp;here&apos;s how we got here.
         </p>
       </div>
