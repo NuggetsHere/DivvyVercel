@@ -7,10 +7,6 @@
   src: url('/fonts/SF-Pro.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Nebulica';
-  src: url('/fonts/Nebulica-Regular-iF6628d4889952b.otf') format('opentype');
-}
 
 html {
   scroll-behavior: smooth;

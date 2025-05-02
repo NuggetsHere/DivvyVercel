@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./components/navbar"
 import Navbar from "./components/navbar";
+import nebulica from '/public/fonts/nebulica-regular';
 
 export const metadata = {
   title: "Divvy Computronix",
@@ -9,8 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="font-nebulica text-black w-full">
+    <html lang="en" className={nebulica.className}>
+      <body >
         <div className="h-full w-full">
           <Navbar />
           {children}

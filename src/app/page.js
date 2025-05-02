@@ -12,14 +12,14 @@ import { SignupFormDemo } from "./components/form";
 
 export default function Home() {
   const words = ["laptops", "phones", "tablets", "computers"];
-
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
 
   return (
     <>
     
       <div className="flex flex-col items-center text-shadow-none [text-shadow:none] w-full overflow-x-hidden "> 
         {/* Hero Section */}
-        <section id="hero" className="pt-48 py-24 px-10 pl-12 md:pl-0 w-full bg-gradient-to-b from-transparent via-[#e0f2fe] to-transparent section bg-white">
+        <section id="hero" className="md:pt-48 pt-32 py-24 px-10 pl-12 md:pl-0 w-full bg-gradient-to-b from-transparent via-[#e0f2fe] to-transparent section bg-white">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center ">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
@@ -32,16 +32,21 @@ export default function Home() {
                 Fix Now!
               </button>
             </div>
-
             <div className="hidden md:block">
-              <Image
-                
+              {/* <Image urlendpoint="https://ik.imagekit.io/divvy" className="rounded-2xl shadow-lg"
+                width={500} src="/hero-illustration.png?updatedAt=1746129219021" alt="" height={500} 
+                 /> */}
+              
+             <Image
                 src="/hero-illustration.png"
                 alt="Hero Illustration"
-                className="rounded-2xl shadow-lg"
                 width={500}
                 height={500}
+                className="rounded-2xl shadow-lg"
+
               />
+                     
+        
             </div>
           </div>
         </section>
@@ -171,3 +176,6 @@ export default function Home() {
     </>
   );
 }
+
+
+
