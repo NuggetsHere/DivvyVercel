@@ -73,9 +73,11 @@ export default function About() {
 
             {/* Button */}
             <div className="mt-6">
-                <button className="px-8 py-3 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition-all">
+                <a href="/contact">
+                <button className="px-8 py-3 bg-black text-white rounded-full text-[20px] hover:bg-gray-800 transition-all">
                 Get in Touch
                 </button>
+                </a>
             </div>
             </div>
         </div>
@@ -163,10 +165,11 @@ export default function About() {
                     Divvy Computronix offers repair services across India through secure
                     courier delivery.
                 </p>
-
+                <Link href="/contact">
                 <button className="mt-6 bg-[#171717] text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition">
                     Get Started
                 </button>
+                </Link>
 
                 </div>
             </div>

@@ -23,15 +23,16 @@ export function BentoGridSecondDemo() {
           header={item.header}
           className={item.className}
           icon={item.icon}
-          image={item.image} />
+          image={item.image}
+          alt={item.alt} />
       ))}
     </BentoGrid>
   );
 }
-const Skeleton = ({ image }) => (
+const Skeleton = ({ image, alt }) => (
 
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"> 
-  <Image src={image} height={600} width={600} className="rounded-xl object-cover" alt="repair service" /> </div> );
+  <Image src={image} height={600} width={600} className="rounded-xl object-cover w-full" alt={alt} /> </div> );
    
 const items = [
   {
@@ -40,7 +41,8 @@ const items = [
     
     className: "md:col-span-1",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/macbook-repair.jpg"/>,
+    header: <Skeleton image="/services/macbook-repair.jpg" alt="MacBook-Repair"/>,
+    
 
   },
   {
@@ -49,14 +51,16 @@ const items = [
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/imac-repair.jpg"/>
+    header: <Skeleton image="/services/imac-repair.jpg" alt= "iMac-Repair"/>,
+    
   },
   {
     title: "Mac Mini Repair",
     description: "Discover the beauty of thoughtful and functional design.",
     className: "md:col-span-1",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/mac-mini-repair.jpg"/>
+    header: <Skeleton image="/services/mac-mini-repair.jpg" alt= "Mac Mini Repair"/>,
+    
   },
   {
     title: "iPhone Repair",
@@ -65,7 +69,8 @@ const items = [
     header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/phone-repair.jpg"/>
+    header: <Skeleton image="/services/phone-repair.jpg" alt= "iPhone Repair"/>,
+    
   },
   {
     title: "Microsoft Surface Repair",
@@ -73,7 +78,8 @@ const items = [
       "Understand the impact of effective communication in our lives.",
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/surface-repair.jpeg"/>
+    header: <Skeleton image="/services/surface-repair.jpeg" alt= "Microsoft Surface Repair"/>,
+    
   },
   {
     title: "Gaming PC Repair",
@@ -81,14 +87,16 @@ const items = [
       "Understand the impact of effective communication in our lives.",
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/gaming-pc-repair.jpg"/>
+    header: <Skeleton image="/services/gaming-pc-repair.jpg"  alt= "Gaming PC Repair"/>,
+   
   },
   {
     title: "Device Maintainance/Device Servicing",
     description:
       "Understand the impact of effective communication in our lives.",
-    className: "md:col-span-3",
+    className: "md:col-span-3 md:row-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/macbook-repair.jpg"/>
+    header: <Skeleton image="/services/device-servicing.jpg" alt= "Device Maintainance/Device Servicing"/>,
+    
   },
 ];

@@ -23,7 +23,7 @@ import {
         <AccordionItem value="item-3">
           <AccordionTrigger>Is there a warranty on repairs?</AccordionTrigger>
           <AccordionContent>
-            Absolutely! Our repairs come with a warranty—typically 30 to 90 days depending on the service and parts used.
+            Absolutely! Our repairs come with a warranty - typically upto ONE YEAR depending on the service and parts used.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">

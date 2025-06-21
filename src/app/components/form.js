@@ -23,25 +23,25 @@ export function SignupFormDemo() {
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
         Contact us via this form and we&apos;ll get back to you as soon as possible!
       </p>
-      <form className="my-8" onSubmit={handleSubmit}>
+      <form className="my-8"  action="https://formsubmit.co/contactus@divvycomputronix.com" method="POST" >
         <div
           className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
           <LabelInputContainer>
             <Label htmlFor="firstname">Name</Label>
-            <Input id="firstname" placeholder="Enter your full name" type="text" />
+            <Input id="firstname" placeholder="Enter your full name" type="text" name="name" />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input id="email" placeholder="contactus@divvycomputronix.com" type="email" name="email"/>
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="number">Contact Number</Label>
-          <Input id="mobile_number" type="number" placeholder="+91 XXXXX XXXXX" />
+          <Input id="mobile_number" type="tel" placeholder="+91 XXXXX XXXXX" name="phone"/>
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
           <Label htmlFor="comment">Additional Comments</Label>
-          <Input id="comment" placeholder="Describe your issue" type="comment" />
+          <Input id="comment" placeholder="Describe your issue" type="comment" name="issue"/>
         </LabelInputContainer>
 
         <button

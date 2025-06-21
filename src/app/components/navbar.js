@@ -110,7 +110,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" id='logo'>
-        <Image src="/divvylogo-nav.svg" height={50} width={40} />
+        <Image src="/divvylogo-nav.svg" height={50} width={40} alt='divvy-logo'/>
         </Link>
         
 
