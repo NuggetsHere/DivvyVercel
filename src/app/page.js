@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -6,13 +5,82 @@ import {
   IconBrandAmazon,
   // Add more icons as needed
 } from "@tabler/icons-react";
-
+import Link from 'next/link'
 import Testimonials from "./components/Testimonials";
 import CallToAction from "./components/callToAction";
 import Features from "./components/Features";
 import VisitUsOffline from "./components/VistUsOffline";
 import { AccordionDemo } from "./components/faq";
 import { SignupFormDemo } from "./components/form";
+
+export const metadata = {
+  title: 'Divvy Computronix | Apple, MacBook & Laptop Repair Experts in Nehru Place, Delhi NCR',
+  description:
+    'Since 2009, Divvy Computronix has provided expert repair services for MacBooks, iPhones, laptops, and gaming PCs. Located in Nehru Place, we specialize in motherboard repairs, Apple device servicing, and certified refurbished laptops.',
+  keywords: [
+    // Apple & MacBook Focus
+    'MacBook repair Nehru Place',
+    'iMac repair Delhi NCR',
+    'Apple repair experts in Delhi',
+    'MacBook screen replacement Nehru Place',
+    'MacBook Air and Pro repair',
+    'Apple motherboard repair Delhi',
+    'MacBook liquid damage repair',
+    'MacBook keyboard replacement Delhi',
+
+    // Laptop Repair
+    'laptop repair Nehru Place',
+    'trusted laptop repair technicians Delhi NCR',
+    'affordable laptop service center Delhi',
+    'fast laptop repair Nehru Place',
+    'certified laptop repair experts in Delhi',
+
+    // Phone Repair
+    'iPhone repair Nehru Place',
+    'reliable phone repair center Delhi',
+    'Android phone repair Nehru Place',
+    'cracked screen phone repair Delhi',
+    'quick and affordable phone repair Delhi NCR',
+
+    // Gaming PC
+    'gaming PC repair Nehru Place',
+    'high-end gaming PC repair Delhi NCR',
+    'gaming laptop repair in Delhi',
+    'custom gaming PC service Nehru Place',
+
+    // Refurbished Devices
+    'refurbished MacBooks Delhi NCR',
+    'affordable refurbished laptops Delhi',
+    'certified second-hand laptops Nehru Place',
+    'budget MacBooks with warranty Delhi',
+  ],
+  openGraph: {
+    title: 'Divvy Computronix | Apple, MacBook & Laptop Repair in Delhi NCR',
+    description:
+      'Expert MacBook, iPhone, and laptop repair services in Nehru Place since 2009. Trusted for motherboard repairs, screen replacements, and refurbished Apple devices.',
+    url: 'https://divvycomputronix.com', // Replace with your domain
+    type: 'website',
+    locale: 'en_IN',
+    images: [
+      {
+        url: 'https://divvycomputronix.com/og-image.png', // Replace with your OG image
+        width: 1200,
+        height: 630,
+        alt: 'Divvy Computronix Repair Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Divvy Computronix | MacBook & Apple Repair Experts in Nehru Place',
+    description:
+      'Specialists in MacBook, iMac, iPhone, and laptop repairs in Delhi NCR. Fast 24-hour service, refurbished devices, and Apple motherboard repair experts.',
+    images: ['https://divvycomputronix.com/og-image.png'], // Same as OG image
+  },
+  metadataBase: new URL('https://divvycomputronix.com'), // Replace with your domain
+};
+
+
 
 export default function Home() {
   return (
@@ -35,11 +103,11 @@ export default function Home() {
               motherboards, graphic card failures, and non-booting PCs, we’ve
               seen (and fixed) it all.
             </p>
-            <a href="/contact">
+            <Link href="/contact">
             <button className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-all">
               Fix Now!
             </button>
-            </a>
+            </Link>
           </div>
           <div className="hidden md:block">
             <Image
@@ -172,3 +240,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -28,11 +28,9 @@ export default function RootLayout({ children }) {
           <Navbar />
           </div>
           {children}
-        <div className="fixed top-[500px] right-0 left-0 h-full w-full">
+        <div className="fixed bottom-0 right-0 pb-8 pr-8 z-50">
          <WhatsAppButton />
         </div>
-        
-
         <div>
           <Footer />
         </div>

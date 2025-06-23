@@ -2,7 +2,7 @@
 import { GlowingEffectDemoSecond } from "@/components/glowing-cards";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TimelineDemo } from "../components/timeline";
-
+import Link from "next/link";
 
 export default function About() {
     return (
@@ -73,11 +73,11 @@ export default function About() {
 
             {/* Button */}
             <div className="mt-6">
-                <a href="/contact">
+                <Link href="/contact">
                 <button className="px-8 py-3 bg-black text-white rounded-full text-[20px] hover:bg-gray-800 transition-all">
                 Get in Touch
                 </button>
-                </a>
+                </Link>
             </div>
             </div>
         </div>
