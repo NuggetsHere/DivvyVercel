@@ -3,6 +3,7 @@ import { GlowingEffectDemoSecond } from "@/components/glowing-cards";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TimelineDemo } from "../components/timeline";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
     return (
@@ -29,10 +30,12 @@ export default function About() {
 
             {/* Image */}
             <div className="overflow-hidden relative h-full w-full rounded-[2rem]">
-                <img
+                <Image
                 src="/about-image.png"
                 alt="Laptop"
                 className="object-cover w-full h-full absolute inset-0"
+                width={500}
+                height={500}
                 />
             </div>
 

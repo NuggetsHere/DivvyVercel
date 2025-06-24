@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
   return (
 
 <Link href="https://wa.me/+919312247627">
-<button className="Btn">
+<button className="whatsappbutton" aria-label="Open Whatsapp Chat with Us">
    <span className="svgContainer">
       <svg viewBox="0 0 16 16" height="1.5em" className="svgIcon" fill="white">
          <path

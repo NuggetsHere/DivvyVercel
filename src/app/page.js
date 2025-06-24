@@ -12,6 +12,7 @@ import Features from "./components/Features";
 import VisitUsOffline from "./components/VistUsOffline";
 import { AccordionDemo } from "./components/faq";
 import { SignupFormDemo } from "./components/form";
+import { InfiniteMovingCardsDemo }from "./components/certifications";
 
 export const metadata = {
   title: 'Divvy Computronix | Apple, MacBook & Laptop Repair Experts in Nehru Place, Delhi NCR',
@@ -167,6 +168,10 @@ export default function Home() {
         <h1 className="text-4xl font-bold px-10">Why Divvy Computronix?</h1>
         <Features />
       </div>
+
+      {/* Certifications Section */}
+
+      <InfiniteMovingCardsDemo />
 
       {/* Testimonials Section */}
       <div

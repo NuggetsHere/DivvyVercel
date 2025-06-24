@@ -126,7 +126,8 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button 
           className="md:hidden text-black focus:outline-none" 
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen(!menuOpen)} 
+          aria-label="Open Menu"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

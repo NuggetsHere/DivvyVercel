@@ -81,6 +81,7 @@ export default function AdminPage() {
         />
         <input
           name="date"
+          type="date"
           placeholder="Date (e.g. May 12, 2023)"
           value={form.date}
           onChange={handleChange}

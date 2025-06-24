@@ -67,7 +67,7 @@ export const InfiniteMovingCards = ({
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}>
-        {items.map((item, idx) => (
+        {/* {items.map((item, idx) => (
           <li
             className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
             key={item.name}>
@@ -81,8 +81,31 @@ export const InfiniteMovingCards = ({
               />
               </div>
             </blockquote>
-          </li>
-        ))}
+          </li> */}
+
+          {items.map((item, idx) => (
+  <li
+    key={item.name}
+    className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
+  >
+    <a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full h-full"
+    >
+      <blockquote>
+        <div>
+          <img
+            src={item.image}
+            alt={item.name}
+            className="relative inset-auto w-auto h-auto object-cover"
+          />
+        </div>
+      </blockquote>
+    </a>
+  </li>
+))}
       </ul>
     </div>
   );

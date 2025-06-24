@@ -234,7 +234,7 @@ a {
 
 
 /* From Uiverse.io by Gaurang7717 */ 
-.Btn {
+.whatsappbutton {
   width: 45px;
   height: 45px;
   display: flex;
@@ -278,11 +278,11 @@ a {
   transition: all 0.3s;
 }
 
-.Btn:hover .BG {
+.whatsappbutton:hover .BG {
   transform: rotate(35deg);
   transform-origin: bottom;
 }
 
-.Btn:hover .svgContainer {
+.whatsappbutton:hover .svgContainer {
   background-color: rgba(156, 156, 156, 0.466);
 }

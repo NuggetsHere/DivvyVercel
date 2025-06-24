@@ -10,7 +10,9 @@ const BlogSchema = new mongoose.Schema({
   author: String,
   authorImage: String,
   authorBio: String,
-  date: String,
-});
+   date: {
+    type: Date,
+   }
+  });
 
 export default mongoose.models.Blog || mongoose.model('Blog', BlogSchema);
