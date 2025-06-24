@@ -257,7 +257,7 @@ export default async function BlogPostPage({ params }) {
           />
           <div>
             <p className="text-sm font-semibold text-gray-900">{blog.author}</p>
-            <p className="text-sm text-gray-500">Published on {blog.date}</p>
+            <p className="text-sm text-gray-500">Published on {blog.date.toLocaleDateString()}</p>
           </div>
         </div>
 
