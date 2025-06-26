@@ -112,11 +112,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getBaseUrl } from '@/lib/getBaseUrl';
+
 
 async function getBlogs() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-blogs`, {
-    cache: 'no-store',
-  });
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get-blogs`, { cache: 'no-store',});
+  const res = await fetch(`${getBaseUrl()}/api/get-blogs`, { cache: 'no-store' });
+
+   
   if (!res.ok) throw new Error('Failed to fetch blogs');
   return res.json();
 }
