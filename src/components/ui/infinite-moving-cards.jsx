@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 export const InfiniteMovingCards = ({
   items,
@@ -63,7 +64,7 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4",
+          "flex w-max w-full shrink-0 flex-nowrap gap-4 py-4",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}>
@@ -96,7 +97,9 @@ export const InfiniteMovingCards = ({
     >
       <blockquote>
         <div>
-          <img
+          <Image
+            width={600}
+            height={200}
             src={item.image}
             alt={item.name}
             className="relative inset-auto w-auto h-auto object-cover"
