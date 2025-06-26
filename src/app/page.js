@@ -86,42 +86,45 @@ export const metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col items-center text-shadow-none w-full overflow-x-hidden">
-      {/* Hero Section */}
-      <section
-        id="hero"
-        className="md:pt-48 pt-32 py-24 px-10 pl-12 md:pl-0 w-full bg-gradient-to-b from-transparent via-[#e0f2fe] to-transparent bg-white"
-      >
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 md:pl-8 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Complex Problems.
-              <br />
-              Simple Solutions.
-            </h1>
-            <p className="text-lg text-gray-600 mb-6 max-w-xl">
-              At Divvy Computronix, we specialize in solving the most complicated
-              repair issues with ease. From liquid-damaged MacBooks to dead
-              motherboards, graphic card failures, and non-booting PCs, we’ve
-              seen (and fixed) it all.
-            </p>
-            <Link href="/contact">
-            <button className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-all">
-              Fix Now!
-            </button>
-            </Link>
-          </div>
-          <div className="hidden md:block">
-            <Image
-              src="/hero-illustration.png"
-              alt="Hero Illustration"
-              width={500}
-              height={500}
-              className="rounded-2xl shadow-lg"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
-        </div>
-      </section>
+      
+    <section
+  id="hero"
+  className="md:pt-48 pt-32 py-24 px-10 pl-12 md:pl-0 w-full bg-gradient-to-b from-transparent via-[#e0f2fe] to-transparent bg-white"
+>
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 md:pl-8 gap-12 items-center">
+    <div>
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+        Complex Problems.
+        <br />
+        Simple Solutions.
+      </h1>
+      <h2 className="text-lg text-gray-600 mb-6 max-w-xl">
+        At Divvy Computronix, we specialize in solving the most complicated
+        repair issues with ease. From liquid-damaged MacBooks to dead
+        motherboards, graphic card failures, and non-booting PCs, we’ve
+        seen (and fixed) it all.
+      </h2>
+      <Link href="/contact">
+        <button className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-all">
+          Fix Now!
+        </button>
+      </Link>
+    </div>
+
+    <div className="hidden md:block">
+      <Image
+        src="/hero-illustration.png"
+        alt="Hero Illustration"
+        width={500}
+        height={500}
+        priority
+        className="rounded-2xl shadow-lg"
+        sizes="(max-width: 1024px) 50vw, 500px"
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* Services Section */}
       <div
@@ -145,13 +148,13 @@ export default function Home() {
               key={i}
               className="bg-neutral-100 flex flex-col items-center gap-2 shadow-lg relative rounded-xl"
             >
-              <div className="relative w-[250px] h-[250px]">
+                 <div className="relative w-[250px] aspect-square sm:w-[250px]">
                 <Image
                   src={`/services/${service.src}`}
                   fill
                   className="rounded-t-xl mb-4 object-cover"
                   alt={service.title}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 250px"
                 />
               </div>
               <h2 className="my-4">{service.title}</h2>

@@ -17,10 +17,6 @@ module.exports = {
   			nebulica: [
   				'Nebulica',
   			],
-  			sf: [
-  				'SFpro',
-  				'serif'
-  			]
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

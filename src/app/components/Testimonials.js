@@ -39,7 +39,7 @@ const CARDS = [
   {
     id: 1,
     name: "Ojasw Kant",
-    designation: "Senior Shitposter",
+    designation: "",
     content: (
       <p>
         My laptop was not charging at all they checked it for free 
@@ -55,10 +55,8 @@ const CARDS = [
     content: (
       <p>
         The first rule of
-        <Highlight>Fight Club</Highlight> is that you do not talk about fight
-        club. The second rule of
-        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-        club.
+        <Highlight>Friendly staff and reasonable prices.</Highlight> They delivered my laptop on time and explained
+        everything clearly. Would recommend for a hassle-free experience.
       </p>
     ),
   },
