@@ -19,7 +19,7 @@ import Head from "next/head";
 export const metadata = {
   title: 'Divvy Computronix | Apple, MacBook & Laptop Repair Experts in Nehru Place, Delhi NCR',
   description:
-    'Since 2009, Divvy Computronix has provided expert repair services for MacBooks, iPhones, laptops, and gaming PCs. Located in Nehru Place, we specialize in motherboard repairs, Apple device servicing, and certified refurbished laptops.',
+    'Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
   keywords: [
     // Apple & MacBook Focus
     'MacBook repair Nehru Place',
@@ -232,11 +232,14 @@ export default function Home() {
 >
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 md:pl-8 gap-12 items-center">
     <div>
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+      <h1>
+        Trusted SAME-DAY Laptop Repair in Nehru Place, Delhi NCR
+      </h1>
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
         Complex Problems.
         <br />
         Simple Solutions.
-      </h1>
+      </h2>
       <h2 className="text-lg text-gray-600 mb-6 max-w-xl">
         At Divvy Computronix, we specialize in solving the most complicated
         repair issues with ease. From liquid-damaged MacBooks to dead
@@ -307,7 +310,7 @@ export default function Home() {
         id="features"
         className="h-full mt-32 flex flex-col items-center justify-center w-full bg-white"
       >
-        <h1 className="text-4xl font-bold px-10">Why Divvy Computronix?</h1>
+        <h2 className="text-4xl font-bold px-10">Why choose Divvy Computronix?</h2>
         <Features />
       </div>
 
