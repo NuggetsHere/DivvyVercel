@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /blogadmin/
-Disallow: /_next/
 
 Allow: /
 
