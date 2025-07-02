@@ -13,6 +13,8 @@ import VisitUsOffline from "./components/VistUsOffline";
 import { AccordionDemo } from "./components/faq";
 import { SignupFormDemo } from "./components/form";
 import { InfiniteMovingCardsDemo }from "./components/certifications";
+import Head from "next/head";
+
 
 export const metadata = {
   title: 'Divvy Computronix | Apple, MacBook & Laptop Repair Experts in Nehru Place, Delhi NCR',
@@ -83,8 +85,145 @@ export const metadata = {
 
 
 
+// export default function Home() {
+//   return (
+
 export default function Home() {
   return (
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://www.divvycomputronix.com",
+              "name": "Divvy Computronix",
+              "image": "https://www.divvycomputronix.com/divvylogo-nav.svg",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.divvycomputronix.com/divvylogo-nav.svg",
+                "width": 600,
+                "height": 60
+              },
+              "url": "https://www.divvycomputronix.com",
+              "telephone": "+91-9312247627",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "102-B, 1st Floor, Dohil Chamber, 46, Nehru Place",
+                "addressLocality": "New Delhi",
+                "addressRegion": "Delhi",
+                "postalCode": "110019",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 28.5495,
+                "longitude": 77.2513
+              },
+              "openingHours": ["Mo-Sa 10:00-21:00"],
+              "priceRange": "₹₹",
+              "description": "Divvy Computronix is a trusted repair and service center in Nehru Place, Delhi NCR, specializing in premium refurbished MacBooks, laptops, and expert repairs for MacBooks, iPhones, iMacs, Mac Minis, Surface devices, gaming PCs, and more. Known for fast turnaround, expert diagnostics, and a no fix, no fee policy, we serve individual and business clients across India with courier pickup options.",
+              "founder": {
+                "@type": "Person",
+                "name": "Prakash Kumar"
+              },
+              "foundingDate": "2009",
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-9312247627",
+                  "contactType": "customer service",
+                  "availableLanguage": ["English", "Hindi"],
+                  "name": "Prakash Kumar"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-8810223137",
+                  "contactType": "customer service",
+                  "availableLanguage": ["English", "Hindi"],
+                  "name": "Prakash Kumar"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "url": "https://wa.me/919312247627",
+                  "contactType": "customer support via WhatsApp",
+                  "name": "Prakash Kumar"
+                }
+              ],
+              "makesOffer": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Refurbished MacBooks and Laptops",
+                    "areaServed": [
+                      { "@type": "Place", "name": "Nehru Place" },
+                      { "@type": "Place", "name": "Delhi NCR" }
+                    ]
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "MacBook Repair Services",
+                    "areaServed": [
+                      { "@type": "Place", "name": "Nehru Place" },
+                      { "@type": "Place", "name": "Delhi NCR" }
+                    ]
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "iPhone Repairs",
+                    "areaServed": [
+                      { "@type": "Place", "name": "Nehru Place" },
+                      { "@type": "Place", "name": "Delhi NCR" }
+                    ]
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "iMac and Mac Mini Repairs",
+                    "areaServed": [
+                      { "@type": "Place", "name": "Nehru Place" },
+                      { "@type": "Place", "name": "Delhi NCR" }
+                    ]
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Surface Device Repairs",
+                    "areaServed": [
+                      { "@type": "Place", "name": "Nehru Place" },
+                      { "@type": "Place", "name": "Delhi NCR" }
+                    ]
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Gaming PC Repair and Custom Builds",
+                    "areaServed": [
+                      { "@type": "Place", "name": "Nehru Place" },
+                      { "@type": "Place", "name": "Delhi NCR" }
+                    ]
+                  }
+                }
+              ]
+            })
+          }}
+        />
+      </Head>
     <div className="flex flex-col items-center text-shadow-none w-full overflow-x-hidden">
       
     <section
@@ -218,6 +357,7 @@ export default function Home() {
             alt="broken surface contact image"
             width={1000}
             height={1000}
+            
           />
           </div>
           <div className="md:hidden">
@@ -246,6 +386,7 @@ export default function Home() {
         <VisitUsOffline />
       </div>
     </div>
+    </>
   );
 }
 
