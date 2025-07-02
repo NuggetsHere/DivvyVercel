@@ -233,7 +233,7 @@ export default function Home() {
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 md:pl-8 gap-12 items-center">
     <div>
       <h1>
-        Trusted SAME-DAY Laptop Repair in Nehru Place, Delhi NCR
+        Trusted and affordable SAME-DAY Laptop Repair in Nehru Place, Delhi NCR
       </h1>
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
         Complex Problems.
