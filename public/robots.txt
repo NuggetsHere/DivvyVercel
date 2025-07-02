@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /blogadmin/
+Disallow: /_next/
+
 Allow: /
 
 Sitemap: https://divvycomputronix.com/sitemap.xml
