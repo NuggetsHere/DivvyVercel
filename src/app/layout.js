@@ -5,7 +5,8 @@ import nebulica from '/public/fonts/nebulica-regular';
 import Head from "next/head";
 import Footer from "./components/footer";
 import WhatsAppButton from "./components/button";
-
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Divvy Computronix",
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <body >
+        <Analytics mode="production" />
+        <SpeedInsights />
         <div className="h-full w-full">
           <Navbar />
           </div>
