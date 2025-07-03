@@ -273,9 +273,9 @@ export default function Home() {
         id="services"
         className="h-full bg-[#171717] rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 bg-black"
       >
-        <h1 className="text-3xl text-white font-bold mb-10 md:text-5xl">
+        <h2 className="text-3xl text-white font-bold mb-10 md:text-5xl">
           Our Repair Services
-        </h1>
+        </h2>
         <div className="flex flex-wrap justify-center text-xl gap-8 gap-y-10">
           {[
             { title: "MacBook Repairs", src: "macbook-repair.jpg" },
@@ -324,9 +324,9 @@ export default function Home() {
         className="lg:h-[70vh] h-full w-full pb-16 md:px-32 px-10 lg:grid lg:grid-cols-2 bg-gradient-to-br from-[#f9fafb] via-[#f3f4f6] to-[#e5e7eb] gap-20"
       >
         <div className="h-full w-full flex flex-col items-center justify-center">
-          <h1 className="text-3xl md:text-6xl tracking-tighter uppercase border-b-2 font-serif pt-10">
+          <h2 className="text-3xl md:text-6xl tracking-tighter uppercase border-b-2 font-serif pt-10">
             Testimonials
-          </h1>
+          </h2>
           <p className="md:text-xl mt-8 text-center">
             Hear what people have to say about us
           </p>
@@ -335,7 +335,7 @@ export default function Home() {
       </div>
       {/* Clientele Section */}
       <div className="h-full p-16 my-16 flex flex-col items-center justify-center w-full">
-        <h1 className="text-4xl font-bold mb-10">Our Clientele</h1>
+        <h2 className="text-4xl font-bold mb-10">Our Clientele</h2>
         <div className="flex flex-wrap justify-center bg-neutral-100 p-4 rounded-full">
           <IconBrandAmazon strokeWidth={1.5} className="text-neutral-500 h-8 w-8" />
         </div>
@@ -374,7 +374,7 @@ export default function Home() {
         className="w-full flex flex-col items-center justify-center my-32 mb-16"
       >
         <div className="border-b-2 border-neutral-300 mb-8">
-          <h1 className="text-3xl font-bold text-neutral-800">FAQs</h1>
+          <h3 className="text-3xl font-bold text-neutral-800">FAQs</h3>
         </div>
         <div className="w-3/4">
           <AccordionDemo />

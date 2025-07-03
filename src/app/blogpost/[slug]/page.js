@@ -236,10 +236,18 @@ export default async function BlogPostPage({ params }) {
 
   if (!blog) return notFound();
 
-  const sanitizedContent = sanitize(blog.content);
+let sanitizedContent = sanitize(blog.content);
+
+// Optional: Replace known layout-constraining classes
+sanitizedContent = sanitizedContent
+  .replace(/max-w-\w+/g, 'w-full')          // Replace max-w-* with w-full
+  .replace(/mx-auto/g, '')                  // Remove mx-auto
+  .replace(/class="[^"]*"/g, (match) => {
+    return match.replace(/max-w-[^ ]+|mx-auto/g, '').replace(/\s+/g, ' ').replace('class=" ', 'class="');
+  });
 
   return (
-    <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<main className="w-full px-4 sm:px-6 lg:px-20 xl:px-32 py-12">
       <article>
         {/* Title */}
         <h1 className="text-3xl md:text-5xl text-gray-900 mt-[100px] mb-6 text-center leading-[35px] md:leading-[60px]">
@@ -262,18 +270,20 @@ export default async function BlogPostPage({ params }) {
         </div>
 
         {/* Featured Image */}
-        <div className="mb-10">
-          <Image
-            src={blog.image}
-            alt="Blog banner"
-            width={987}
-            height={607}
-            className="rounded-lg w-full"
-          />
-        </div>
+    <div className="flex justify-center mb-12">
+  <Image
+    src={blog.image}
+    alt="Blog banner"
+    width={960}
+    height={540}
+    className="rounded-xl shadow-md max-w-full h-auto"
+  />
+</div>
+
+
 
         {/* Blog Content */}
-        <div className="prose prose-lg max-w-none mb-16">
+<div className="w-full py-12">
           {parse(sanitizedContent)}
         </div>
 

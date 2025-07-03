@@ -19,7 +19,7 @@ export default function AdminPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form:', form); // ✅ Add this for debugging
+    console.log('Submitting form:', form); 
 
     const res = await fetch('/api/add-blog', {
       method: 'POST',
