@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 async function getBlogs() {
-  const baseUrl = await getBaseUrl(); // ✅ Await base URL
+  const baseUrl = await getBaseUrl();
   const res = await fetch(`${baseUrl}/api/get-blogs`, { cache: 'no-store' });
 
   if (!res.ok) {
@@ -17,6 +17,25 @@ async function getBlogs() {
   }
 
   return res.json();
+}
+
+function formatDateWithOrdinal(dateStr) {
+  const date = new Date(dateStr);
+  const day = date.getDate();
+  const dayWithSuffix =
+    day +
+    (day % 10 === 1 && day !== 11
+      ? 'st'
+      : day % 10 === 2 && day !== 12
+      ? 'nd'
+      : day % 10 === 3 && day !== 13
+      ? 'rd'
+      : 'th');
+
+  const options = { weekday: 'long', month: 'long', year: 'numeric' };
+  const formatted = date.toLocaleDateString('en-US', options);
+
+  return formatted.replace(date.getFullYear(), `${dayWithSuffix} ${date.getFullYear()},`);
 }
 
 export default async function BlogsPage() {
@@ -41,7 +60,12 @@ export default async function BlogsPage() {
                   </div>
                 )}
                 <div className="p-4">
-                  <p className="text-sm text-gray-500">{blog.date}</p>
+                  <p className="text-sm text-gray-500">
+
+                    {formatDateWithOrdinal(blog.date)}
+
+
+                  </p>
                   <div className="relative group">
                     <h2 className="text-xl font-semibold text-black mb-2 relative z-10">
                       {blog.title}
