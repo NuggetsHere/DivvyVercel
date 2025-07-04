@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <main className="w-full px-4 sm:px-6 lg:px-20 xl:px-32 py-16">
-      <article className="max-w-3xl mx-auto text-gray-800">
+      <article className="max-w-5xl mx-auto text-gray-800">
         {/* Blog Title */}
         <h1 className="text-3xl md:text-5xl text-center font-bold text-gray-900 mb-6 leading-tight">
           {blog.title}
