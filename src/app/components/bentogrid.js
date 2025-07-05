@@ -36,67 +36,52 @@ const Skeleton = ({ image, alt }) => (
    
 const items = [
   {
-    title: "MacBook Repair",
+    title: <h2 className="text-xl font-semibold">MacBook Repair</h2>,
     description: "Explore the birth of groundbreaking ideas and inventions.",
-    
     className: "md:col-span-1",
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     header: <Skeleton image="/services/macbook-repair.jpg" alt="MacBook-Repair"/>,
-    
-
   },
   {
-    title: "iMac Repair",
+    title: <h2 className="text-xl font-semibold">iMac Repair</h2>,
     description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
     className: "md:col-span-1",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/imac-repair.jpg" alt= "iMac-Repair"/>,
-    
+    header: <Skeleton image="/services/imac-repair.jpg" alt="iMac-Repair"/>,
   },
   {
-    title: "Mac Mini Repair",
+    title: <h2 className="text-xl font-semibold">Mac Mini Repair</h2>,
     description: "Discover the beauty of thoughtful and functional design.",
     className: "md:col-span-1",
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/mac-mini-repair.jpg" alt= "Mac Mini Repair"/>,
-    
+    header: <Skeleton image="/services/mac-mini-repair.jpg" alt="Mac Mini Repair"/>,
   },
   {
-    title: "iPhone Repair",
-    description:
-      "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
+    title: <h2 className="text-xl font-semibold">iPhone Repair</h2>,
+    description: "Understand the impact of effective communication in our lives.",
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/phone-repair.jpg" alt= "iPhone Repair"/>,
-    
+    header: <Skeleton image="/services/phone-repair.jpg" alt="iPhone Repair"/>,
   },
   {
-    title: "Microsoft Surface Repair",
-    description:
-      "Understand the impact of effective communication in our lives.",
+    title: <h2 className="text-xl font-semibold">Microsoft Surface Repair</h2>,
+    description: "Understand the impact of effective communication in our lives.",
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/surface-repair.jpeg" alt= "Microsoft Surface Repair"/>,
-    
+    header: <Skeleton image="/services/surface-repair.jpeg" alt="Microsoft Surface Repair"/>,
   },
   {
-    title: "Gaming PC Repair",
-    description:
-      "Understand the impact of effective communication in our lives.",
+    title: <h2 className="text-xl font-semibold">Gaming PC Repair</h2>,
+    description: "Understand the impact of effective communication in our lives.",
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/gaming-pc-repair.jpg"  alt= "Gaming PC Repair"/>,
-   
+    header: <Skeleton image="/services/gaming-pc-repair.jpg" alt="Gaming PC Repair"/>,
   },
   {
-    title: "Device Maintainance/Device Servicing",
-    description:
-      "Understand the impact of effective communication in our lives.",
+    title: <h2 className="text-xl font-semibold">Device Maintainance/Device Servicing</h2>,
+    description: "Understand the impact of effective communication in our lives.",
     className: "md:col-span-3 md:row-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    header: <Skeleton image="/services/device-servicing.jpg" alt= "Device Maintainance/Device Servicing"/>,
-    
+    header: <Skeleton image="/services/device-servicing.jpg" alt="Device Maintainance/Device Servicing"/>,
   },
 ];
