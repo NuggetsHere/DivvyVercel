@@ -18,7 +18,7 @@ import { InfiniteMovingCardsDemo }from "./components/certifications";
 export const metadata = {
   title: 'Laptop & MacBook Repair Experts in Delhi NCR | Second-Hand & Refurbished Laptops | Divvy Computronix',
   description:
-    'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
+    'Fast laptop repair in Nehru Place, Delhi. Get SAME DAY service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
   keywords: [
     // Apple & MacBook Focus
     'MacBook repair Nehru Place',
