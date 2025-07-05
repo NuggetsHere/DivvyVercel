@@ -19,7 +19,7 @@ import Head from "next/head";
 export const metadata = {
   title: 'Divvy Computronix | Apple, MacBook & Laptop Repair Experts in Nehru Place, Delhi NCR',
   description:
-    'Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
+    'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
   keywords: [
     // Apple & MacBook Focus
     'MacBook repair Nehru Place',
@@ -60,7 +60,7 @@ export const metadata = {
   openGraph: {
     title: 'Divvy Computronix | Apple, MacBook & Laptop Repair in Delhi NCR',
     description:
-      'Expert MacBook, iPhone, and laptop repair services in Nehru Place since 2009. Trusted for motherboard repairs, screen replacements, and refurbished Apple devices.',
+      'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Expert MacBook, iPhone, and laptop repair services in Nehru Place since 2009. Trusted for motherboard repairs, screen replacements, and refurbished Apple devices.',
     url: 'https://divvycomputronix.com', // Replace with your domain
     type: 'website',
     locale: 'en_IN',
@@ -77,7 +77,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Divvy Computronix | MacBook & Apple Repair Experts in Nehru Place',
     description:
-      'Specialists in MacBook, iMac, iPhone, and laptop repairs in Delhi NCR. Fast 24-hour service, refurbished devices, and Apple motherboard repair experts.',
+      'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Specialists in MacBook, iMac, iPhone, and laptop repairs in Delhi NCR. Fast 24-hour service, refurbished devices, and Apple motherboard repair experts.',
     images: ['https://divvycomputronix.com/og-image.png'], // Same as OG image
   },
   metadataBase: new URL('https://divvycomputronix.com'), // Replace with your domain
@@ -124,7 +124,7 @@ export default function Home() {
               },
               "openingHours": ["Mo-Sa 10:00-21:00"],
               "priceRange": "₹₹",
-              "description": "Divvy Computronix is a trusted repair and service center in Nehru Place, Delhi NCR, specializing in premium refurbished MacBooks, laptops, and expert repairs for MacBooks, iPhones, iMacs, Mac Minis, Surface devices, gaming PCs, and more. Known for fast turnaround, expert diagnostics, and a no fix, no fee policy, we serve individual and business clients across India with courier pickup options.",
+              "description": "Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Divvy Computronix is a trusted repair and service center in Nehru Place, Delhi NCR, specializing in premium refurbished MacBooks, laptops, and expert repairs for MacBooks, iPhones, iMacs, Mac Minis, Surface devices, gaming PCs, and more. Known for fast turnaround, expert diagnostics, and a no fix, no fee policy, we serve individual and business clients across India with courier pickup options.",
               "founder": {
                 "@type": "Person",
                 "name": "Prakash Kumar"
