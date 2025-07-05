@@ -7,7 +7,7 @@ export default function Services() {
         <div className="flex flex-col lg:flex-row justify-between items-center gap-10 mb-16 mt-20">
           <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 text-sm bg-white px-3 py-1 rounded-full shadow text-black">
-              🛠️ Laptop & MacBook Repair Services in Delhi | Divvy Computronix
+              🛠️ Laptop & MacBook Repair Services in Delhi NCR | Divvy Computronix
             </span>
             <h2 className="text-4xl font-semibold text-black mt-4 mb-4">
               What we can do for you
