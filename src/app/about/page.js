@@ -1,9 +1,9 @@
 "use client";
 import { GlowingEffectDemoSecond } from "@/components/glowing-cards";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { TimelineDemo } from "../components/timeline";
 import Link from "next/link";
 import Image from "next/image";
+
 
 export default function About() {
     return (

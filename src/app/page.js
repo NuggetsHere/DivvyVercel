@@ -269,41 +269,150 @@ export default function Home() {
 
 
       {/* Services Section */}
+{/* Services Section */}
+<div
+  id="services"
+  className="h-full bg-[#171717] rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 bg-black"
+>
+  <h2 className="text-3xl text-white font-bold mb-10 md:text-5xl text-center">
+    Our Repair Services
+  </h2>
+
+  <div className="flex flex-wrap md:flex-nowrap justify-center items-start gap-6 w-full max-w-7xl px-4">
+    {[
+      {
+        title: "MacBook Repairs",
+        src: "macbook-repair.jpg",
+        seo: "Screen replacements, logic board fixes, water damage MacBook repairs",
+      },
+      {
+        title: "iPhone Repairs",
+        src: "phone-repair.jpg",
+        seo: "iPhone screen, battery and motherboard-level repair in Delhi",
+      },
+      {
+        title: "iMac Repairs",
+        src: "imac-repair.jpg",
+        seo: "Expert iMac servicing, SSD upgrades, GPU fixes in Nehru Place",
+      },
+      {
+        title: "Laptop Repair",
+        src: "laptop-repair.jpg",
+        seo: "Laptop diagnostics for all brands with 24hr repair service",
+      },
+      {
+        title: "Gaming PC Repairs",
+        src: "gaming-pc-repair.jpg",
+        seo: "Custom gaming PC repair including GPU and fan issues",
+      },
+      {
+        title: "Mac Mini Repairs",
+        src: "mac-mini-repair.jpg",
+        seo: "Mac Mini SSD, RAM, logic board repair in Delhi",
+      },
+      {
+        title: "Surface Repairs",
+        src: "surface-repair.jpeg",
+        seo: "Surface Pro screen, battery and motherboard repair",
+      },
+    ].map((service, i) => (
       <div
-        id="services"
-        className="h-full bg-[#171717] rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 bg-black"
+        key={i}
+        className="flex flex-col items-center gap-2 shadow-lg rounded-xl w-[180px] bg-neutral-100"
       >
-        <h2 className="text-3xl text-white font-bold mb-10 md:text-5xl">
-          Our Repair Services
-        </h2>
-        <div className="flex flex-wrap justify-center text-xl gap-8 gap-y-10">
-          {[
-            { title: "MacBook Repairs", src: "macbook-repair.jpg" },
-            { title: "iPhone Repairs", src: "phone-repair.jpg" },
-            { title: "iMac Repairs", src: "imac-repair.jpg" },
-            { title: "Laptop Repair", src: "laptop-repair.jpg" },
-            { title: "Gaming PC Repairs", src: "gaming-pc-repair.jpg" },
-            { title: "Mac Mini Repairs", src: "mac-mini-repair.jpg" },
-            { title: "Surface Repairs", src: "surface-repair.jpeg" },
-          ].map((service, i) => (
-            <div
-              key={i}
-              className="bg-neutral-100 flex flex-col items-center gap-2 shadow-lg relative rounded-xl"
-            >
-                 <div className="relative w-[250px] aspect-square sm:w-[250px]">
-                <Image
-                  src={`/services/${service.src}`}
-                  fill
-                  className="rounded-t-xl mb-4 object-cover"
-                  alt={service.title}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 250px"
-                />
-              </div>
-              <h2 className="my-4">{service.title}</h2>
-            </div>
-          ))}
+        <div className="relative w-full aspect-square -mb-1">
+          <Image
+            src={`/services/${service.src}`}
+            fill
+            className="rounded-t-xl object-cover"
+            alt={service.seo} // SEO-friendly
+            sizes="180px"
+          />
         </div>
+        <h2 className="my-2 text-center text-sm font-semibold px-2">
+          {service.title}
+        </h2>
+        <span className="sr-only">{service.seo}</span> {/* Screen readers only */}
       </div>
+    ))}
+  </div>
+
+  <p className="text-gray-400 mt-8 text-md text-center max-w-2xl px-4">
+    Trusted by 5,000+ customers since 2009. Visit us at Nehru Place or schedule a free pickup today.
+  </p>
+</div>
+
+
+
+
+{/* Products Section */}
+
+<div
+  id="products"
+  className="h-full bg-[#171717] rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 bg-black mt-10 "
+>
+  <h1 className="text-3xl md:text-5xl text-white font-bold text-center px-4 leading-snug">
+    Buy Refurbished Second Hand MacBooks, iPhones & Laptops in Delhi NCR
+  </h1>
+  <p className="text-gray-300 mt-4 text-center text-sm md:text-base px-4 max-w-3xl">
+    Professionally tested, certified pre-owned devices with warranty and expert support.
+  </p>
+
+  <div className="mt-10 flex flex-wrap md:flex-nowrap justify-center items-start gap-6 w-full max-w-7xl px-4">
+    {[
+      { title: "MacBook", src: "macbook.jpg" },
+      { title: "Surface Devices", src: "surface.jpg" },
+      { title: "Windows Laptops", src: "windows-laptop.jpg" },
+      { title: "iPhone", src: "iphone.jpg" },
+      { title: "iPad", src: "ipad.jpg" },
+    ].map((product, i) => (
+      <div
+        key={i}
+        className="bg-neutral-100 flex flex-col items-center gap-2 shadow-lg rounded-xl w-[180px]"
+      >
+        <div className="relative w-full aspect-square">
+          <Image
+            src={`/products/${product.src}`}
+            fill
+            className="rounded-t-xl object-cover"
+            alt={product.title}
+            sizes="180px"
+          />
+        </div>
+        <h2 className="my-2 text-center text-sm font-semibold px-2">
+          {product.title}
+        </h2>
+      </div>
+    ))}
+  </div>
+
+      
+
+
+  <Link href="tel:+919312247627">
+            <button
+              type="button"
+              className="flex justify-center gap-2 items-center text-sm bg-gray-50 backdrop-blur-md font-semibold border border-gray-50 
+              before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 
+              before:rounded-full before:bg-[#e0f2fe] hover:text-black before:-z-10 before:aspect-square before:hover:scale-150 
+              before:hover:duration-700 relative z-10 px-4 py-2 overflow-hidden rounded-full group mt-10 "
+            >
+              Enquire About Availability
+              <svg
+                className="w-6 h-6 group-hover:rotate-90 text-gray-800 ease-linear duration-300 rounded-full border border-gray-700 p-1 rotate-45"
+                viewBox="0 0 16 19" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                  className="fill-gray-800 group-hover:fill-gray-800"
+                />
+              </svg>
+            </button>
+            </Link>
+</div>
+
+
 
       {/* Features Section */}
       <div

@@ -29,11 +29,6 @@ export function BentoGridSecondDemo() {
     </BentoGrid>
   );
 }
-const Skeleton = ({ image, alt }) => (
-
-  <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"> 
-  <Image src={image} height={600} width={600} className="rounded-xl object-cover w-full" alt={alt} /> </div> );
-   
 const items = [
   {
     title: <h2 className="text-xl font-semibold">MacBook Repair</h2>,
