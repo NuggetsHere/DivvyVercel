@@ -8,6 +8,75 @@ import Image from "next/image";
 export default function About() {
     return (
         <>
+        <Script id="jsonld-about" type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About Us - Divvy Computronix",
+  "url": "https://divvycomputronix.com/about",
+  "description": "Learn more about Divvy Computronix, a trusted laptop and MacBook repair center based in New Delhi. We specialize in affordable laptop repair, MacBook servicing, and refurbished laptop sales across Delhi NCR.",
+  "about": {
+    "@type": "LocalBusiness",
+    "name": "Divvy Computronix",
+    "image": "https://www.divvycomputronix.com/divvylogo-nav.svg",
+    "url": "https://www.divvycomputronix.com",
+    "telephone": "+91-9312247627",
+    "description": "Divvy Computronix provides fast, affordable laptop repair and MacBook repair services in Delhi NCR. We also sell high-quality refurbished laptops and second-hand laptops with warranty.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "102-B, 1st Floor, Dohil Chamber, 46, Nehru Place",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110019",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "20:00"
+      }
+    ],
+    "priceRange": "₹₹",
+    "areaServed": [
+      { "@type": "Place", "name": "Delhi" },
+      { "@type": "Place", "name": "New Delhi" },
+      { "@type": "Place", "name": "Delhi NCR" },
+      { "@type": "Place", "name": "Gurgaon" },
+      { "@type": "Place", "name": "Faridabad" },
+      { "@type": "Place", "name": "Noida" },
+      { "@type": "Place", "name": "Greater Noida" },
+      { "@type": "Place", "name": "Ghaziabad" },
+      { "@type": "Place", "name": "Haryana" }
+    ]
+  },
+  "keywords": [
+    "laptop repair",
+    "laptop repair delhi ncr",
+    "laptop repair delhi",
+    "laptop repair new delhi",
+    "Macbook repair Delhi",
+    "Macbook repair",
+    "Macbook repair Delhi NCR",
+    "second hand laptops",
+    "refurbished laptops",
+    "second hand laptops delhi",
+    "refurbished laptops delhi",
+    "second hand laptops delhi ncr",
+    "refurbished laptops delhi ncr"
+  ]
+})}
+</Script>
+
         <section className="bg-[#f4f4f4] text-black pt-36 py-16 px-6 md:px-20">
         <div className="mx-auto grid md:grid-cols-3 gap-12 items-center">
             {/* Left Content */}
