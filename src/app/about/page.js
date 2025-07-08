@@ -1,4 +1,3 @@
-"use client";
 import { GlowingEffectDemoSecond } from "@/components/glowing-cards";
 import { TimelineDemo } from "../components/timeline";
 import Link from "next/link";
