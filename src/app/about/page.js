@@ -3,6 +3,8 @@ import { GlowingEffectDemoSecond } from "@/components/glowing-cards";
 import { TimelineDemo } from "../components/timeline";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
+
 export const metadata = {
   title:
     'About Divvy Computronix | Laptop & MacBook Repair Experts in Delhi NCR | Refurbished & Second-Hand Laptops',
