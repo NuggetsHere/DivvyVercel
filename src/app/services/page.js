@@ -51,45 +51,126 @@ export default function Services() {
   return (
     <>
       {/* JSON-LD Structured Data */}
-      <Script id="jsonld-business" type="application/ld+json">
-  {JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Divvy Computronix",
-    "image": "https://www.divvycomputronix.com/divvylogo-nav.svg",
-    "url": "https://www.divvycomputronix.com",
-    "telephone": "+91-9312247627",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "102-B, 1st Floor, Dohil Chamber, 46, Nehru Place",
-      "addressLocality": "New Delhi",
-      "addressRegion": "Delhi",
-      "postalCode": "110019",
-      "addressCountry": "IN"
+      <Script id="jsonld-services" type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Divvy Computronix",
+  "image": "https://www.divvycomputronix.com/divvylogo-nav.svg",
+  "url": "https://www.divvycomputronix.com/services",
+  "telephone": "+91-9312247627",
+  "description": "Expert laptop and MacBook repair in Delhi NCR including refurbished laptops, motherboard repairs, and custom gaming PC builds. Serving Delhi, Gurgaon, Noida, Faridabad, and more with home pickup and fast service.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "102-B, 1st Floor, Dohil Chamber, 46, Nehru Place",
+    "addressLocality": "New Delhi",
+    "addressRegion": "Delhi",
+    "postalCode": "110019",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.5495,
+    "longitude": 77.2510
+  },
+  "hasMap": "https://maps.google.com/?q=28.5495,77.2510",
+  "priceRange": "₹₹",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "20:00"
+    }
+  ],
+  "areaServed": [
+    { "@type": "Place", "name": "Delhi" },
+    { "@type": "Place", "name": "New Delhi" },
+    { "@type": "Place", "name": "Delhi NCR" },
+    { "@type": "Place", "name": "Gurgaon" },
+    { "@type": "Place", "name": "Faridabad" },
+    { "@type": "Place", "name": "Noida" },
+    { "@type": "Place", "name": "Greater Noida" },
+    { "@type": "Place", "name": "Ghaziabad" },
+    { "@type": "Place", "name": "Haryana" }
+  ],
+  "serviceType": [
+    {
+      "@type": "Service",
+      "name": "Laptop Repair in Delhi NCR",
+      "description": "Reliable laptop repair services in Delhi NCR including screen replacement, overheating fix, battery change, and motherboard-level repairs.",
+      "areaServed": { "@type": "Place", "name": "Delhi NCR" },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "INR",
+        "price": "499",
+        "eligibleRegion": { "@type": "Place", "name": "New Delhi" }
+      },
+      "additionalType": "https://en.wikipedia.org/wiki/Laptop_repair"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "19:00"
+    {
+      "@type": "Service",
+      "name": "MacBook Repair Delhi",
+      "description": "MacBook Pro, Air, and iMac repairs including battery, SSD upgrades, screen and logic board services.",
+      "areaServed": { "@type": "Place", "name": "Delhi" },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "INR",
+        "price": "799",
+        "eligibleRegion": { "@type": "Place", "name": "Delhi NCR" }
+      },
+      "additionalType": "https://en.wikipedia.org/wiki/MacBook"
+    },
+    {
+      "@type": "Service",
+      "name": "Refurbished and Second-hand Laptops",
+      "description": "Buy refurbished and second-hand laptops with warranty in Delhi NCR, Gurgaon, Noida, and nearby areas.",
+      "areaServed": { "@type": "Place", "name": "Delhi NCR" },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "8999",
+        "highPrice": "49999",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock"
+      },
+      "additionalType": "https://en.wikipedia.org/wiki/Refurbishment_(electronics)"
+    },
+    {
+      "@type": "Service",
+      "name": "iMac and Mac Mini Repair",
+      "description": "iMac and Mac Mini SSD upgrades, macOS reinstallation, logic board services in New Delhi and NCR.",
+      "areaServed": { "@type": "Place", "name": "New Delhi" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "999"
       }
-    ],
-    "priceRange": "₹₹",
-    "sameAs": [
-      "https://www.whatsapp.com", // Replace with actual WhatsApp link or remove if not public
-      "https://www.divvycomputronix.com"
-    ],
-    "description": "Divvy Computronix offers laptop and MacBook repair services, motherboard-level repairs, screen replacements, and refurbished laptops in Delhi NCR."
-  })}
+    },
+    {
+      "@type": "Service",
+      "name": "Custom Gaming PC Builds",
+      "description": "Custom-built gaming PCs with top hardware. Available across Delhi, Noida, Gurgaon, and Ghaziabad.",
+      "areaServed": { "@type": "Place", "name": "Delhi NCR" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "1999"
+      }
+    }
+  ]
+})}
 </Script>
+
 
 
       <div className="bg-[#EEEEEE] py-16 px-6">
