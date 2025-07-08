@@ -3,6 +3,64 @@ import { GlowingEffectDemoSecond } from "@/components/glowing-cards";
 import { TimelineDemo } from "../components/timeline";
 import Link from "next/link";
 import Image from "next/image";
+export const metadata = {
+  title:
+    'About Divvy Computronix | Laptop & MacBook Repair Experts in Delhi NCR | Refurbished & Second-Hand Laptops',
+  description:
+    'Discover the story of Divvy Computronix – trusted experts in laptop repair, MacBook service, and refurbished laptop sales in Delhi NCR. Based in Nehru Place, we specialize in fast, reliable, and affordable device repairs.',
+  keywords: [
+    // Primary service keywords
+    'laptop repair',
+    'laptop repair delhi ncr',
+    'laptop repair delhi',
+    'laptop repair new delhi',
+    'Macbook repair Delhi',
+    'Macbook repair',
+    'Macbook repair Delhi NCR',
+
+    // Refurbished & second-hand keywords
+    'second hand laptops',
+    'refurbished laptops',
+    'second hand laptops delhi',
+    'refurbished laptops delhi',
+    'second hand laptops delhi ncr',
+    'refurbished laptops delhi ncr',
+
+    // About page–specific
+    'About Divvy Computronix',
+    'laptop service center Nehru Place',
+    'trusted repair center in Delhi',
+    'repair team MacBook Delhi',
+    'company profile Divvy Computronix',
+  ],
+  openGraph: {
+    title:
+      'About Divvy Computronix | Laptop & MacBook Repair Experts in Delhi NCR | Refurbished & Second-Hand Laptops',
+    description:
+      'Learn about Divvy Computronix – a leading laptop and MacBook repair center in Nehru Place, Delhi NCR. Known for fast repairs, home pickup, and affordable refurbished laptops.',
+    url: 'https://divvycomputronix.com/about',
+    type: 'website',
+    locale: 'en_IN',
+    images: [
+      {
+        url: 'https://divvycomputronix.com/og-image.png', // Use your OG image
+        width: 1200,
+        height: 630,
+        alt: 'About Divvy Computronix',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'About Divvy Computronix | Laptop & MacBook Repair Experts in Delhi NCR | Refurbished & Second-Hand Laptops',
+    description:
+      'Who are we? Divvy Computronix is your trusted destination for laptop, MacBook, and refurbished device solutions in Delhi NCR. Fast service, expert techs, and home pickup available.',
+    images: ['https://divvycomputronix.com/og-image.png'], // Same OG image
+  },
+  metadataBase: new URL('https://divvycomputronix.com'),
+};
+
 
 
 export default function About() {
