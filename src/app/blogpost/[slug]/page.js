@@ -1,48 +1,36 @@
-
-
-
+// ✅ 4. blogpost/[slug]/page.js
 import dbConnect from '@/lib/mongodb';
 import Blog from '@/models/Blog';
 import { sanitize } from '@/lib/sanitize-html';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import parse from 'html-react-parser';
-import { Montserrat } from 'next/font/google';
+import Script from 'next/script';
 
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
-});
-
-export async function generateMetadata({ params }) {
-  const { slug } = params;
+export async function generateMetadata(props) {
+  const { slug } = await props.params;
   await dbConnect();
   const blog = await Blog.findOne({ slug });
 
-  if (!blog) return {};
+  if (!blog || !blog.seo) return {};
 
   return {
-    title: blog.title,
-    description: blog.description,
+    title: blog.seo.metaTitle,
+    description: blog.seo.metaDescription,
   };
 }
 
-export default async function BlogPostPage({ params }) {
-  const { slug } = params;
+export default async function BlogPostPage(props) {
+  const { slug } = await props.params;
   await dbConnect();
 
   const blog = await Blog.findOne({ slug }).lean();
-
   if (!blog) return notFound();
 
   let sanitizedContent = sanitize(blog.content);
-
-  // Improve layout constraints in content if user adds them
   sanitizedContent = sanitizedContent
-    .replace(/max-w-\w+/g, '') // Strip existing max-w
-    .replace(/mx-auto/g, '')   // Strip mx-auto
+    .replace(/max-w-\w+/g, '')
+    .replace(/mx-auto/g, '')
     .replace(/class="[^"]*"/g, (match) => {
       return match
         .replace(/max-w-[^ ]+|mx-auto/g, '')
@@ -52,13 +40,15 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <main className="w-full px-4 sm:px-6 lg:px-20 xl:px-32 py-16 mt-20">
+      <Script id="schema" type="application/ld+json">
+        {JSON.stringify(blog.seo?.schema || {})}
+      </Script>
+
       <article className="max-w-5xl mx-auto text-gray-800">
-        {/* Blog Title */}
         <h1 className="text-3xl md:text-5xl text-center font-bold text-gray-900 mb-6 leading-tight">
           {blog.title}
         </h1>
 
-        {/* Author Section */}
         <div className="flex items-center justify-center space-x-4 mb-10">
           <Image
             src={blog.authorImage}
@@ -69,11 +59,10 @@ export default async function BlogPostPage({ params }) {
           />
           <div>
             <p className="text-sm font-semibold text-gray-900">{blog.author}</p>
-            <p className="text-sm text-gray-500">Published on {blog.date.toLocaleDateString()}</p>
+            <p className="text-sm text-gray-500">Published on {new Date(blog.date).toLocaleDateString()}</p>
           </div>
         </div>
 
-        {/* Featured Image */}
         {blog.image && (
           <div className="flex justify-center mb-12">
             <Image
@@ -86,12 +75,10 @@ export default async function BlogPostPage({ params }) {
           </div>
         )}
 
-        {/* Blog Content */}
         <div className="prose prose-lg prose-gray max-w-none">
           {parse(sanitizedContent)}
         </div>
 
-        {/* Author Bio */}
         <div className="border-t pt-10 mt-12">
           <div className="flex items-center gap-6">
             <Image

@@ -1,4 +1,4 @@
-// models/Blog.js
+// ✅ 1. models/Blog.js
 import mongoose from 'mongoose';
 
 const BlogSchema = new mongoose.Schema({
@@ -10,9 +10,15 @@ const BlogSchema = new mongoose.Schema({
   author: String,
   authorImage: String,
   authorBio: String,
-   date: {
-    type: Date,
-   }
-  });
+  date: { type: Date },
+  lastModified: { type: Date, default: null },
+  seo: {
+    metaTitle: String,
+    metaDescription: String,
+    keywords: [String],
+    wordCount: Number,
+    schema: Object,
+  },
+});
 
 export default mongoose.models.Blog || mongoose.model('Blog', BlogSchema);
