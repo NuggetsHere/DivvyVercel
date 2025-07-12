@@ -194,7 +194,7 @@ export default function MacBookRepairPage() {
       "Preet Vihar"
     ].map((area) => (
       <Link
-        href="/service-areas"
+        href="/contact"
         key={area}
         className="hover:underline hover:text-blue-600 transition-colors"
       >
