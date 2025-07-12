@@ -267,79 +267,70 @@ export default function Home() {
 </section>
 
 
-{/* Services Section */}
-<div
-  id="services"
-  className="h-full bg-[#171717] rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 bg-black"
->
-  <h2 className="text-3xl text-white font-bold mb-10 md:text-5xl text-center">
-    Our Repair Services
-  </h2>
-
-  <div className="flex flex-wrap md:flex-nowrap justify-center items-start gap-6 w-full max-w-7xl px-4">
-    {[
-      {
-        title: "MacBook Repairs",
-        src: "macbook-repair.jpg",
-        seo: "Screen replacements, logic board fixes, water damage MacBook repairs",
-      },
-      {
-        title: "iPhone Repairs",
-        src: "phone-repair.jpg",
-        seo: "iPhone screen, battery and motherboard-level repair in Delhi",
-      },
-      {
-        title: "iMac Repairs",
-        src: "imac-repair.jpg",
-        seo: "Expert iMac servicing, SSD upgrades, GPU fixes in Nehru Place",
-      },
-      {
-        title: "Laptop Repair",
-        src: "laptop-repair.jpg",
-        seo: "Laptop diagnostics for all brands with 24hr repair service",
-      },
-      {
-        title: "Gaming PC Repairs",
-        src: "gaming-pc-repair.jpg",
-        seo: "Custom gaming PC repair including GPU and fan issues",
-      },
-      {
-        title: "Mac Mini Repairs",
-        src: "mac-mini-repair.jpg",
-        seo: "Mac Mini SSD, RAM, logic board repair in Delhi",
-      },
-      {
-        title: "Surface Repairs",
-        src: "surface-repair.jpeg",
-        seo: "Surface Pro screen, battery and motherboard repair",
-      },
-    ].map((service, i) => (
-      <div
-        key={i}
-        className="flex flex-col items-center gap-2 shadow-lg rounded-xl w-[180px] bg-neutral-100"
-      >
+<div className="flex flex-wrap md:flex-nowrap justify-center items-start gap-6 w-full max-w-7xl px-4">
+  {[
+    {
+      title: "MacBook Repairs",
+      src: "macbook-repair.jpg",
+      seo: "Screen replacements, logic board fixes, water damage MacBook repairs",
+      link: "/services/macbook-repair",
+    },
+    {
+      title: "iPhone Repairs",
+      src: "phone-repair.jpg",
+      seo: "iPhone screen, battery and motherboard-level repair in Delhi",
+      link: "/services/iphone-repair",
+    },
+    {
+      title: "iMac Repairs",
+      src: "imac-repair.jpg",
+      seo: "Expert iMac servicing, SSD upgrades, GPU fixes in Nehru Place",
+      link: "/services/imac-repair",
+    },
+    {
+      title: "Laptop Repair",
+      src: "laptop-repair.jpg",
+      seo: "Laptop diagnostics for all brands with 24hr repair service",
+      link: "/services/laptop-repair",
+    },
+    {
+      title: "Gaming PC Repairs",
+      src: "gaming-pc-repair.jpg",
+      seo: "Custom gaming PC repair including GPU and fan issues",
+      link: "/services/gaming-pc-repair",
+    },
+    {
+      title: "Mac Mini Repairs",
+      src: "mac-mini-repair.jpg",
+      seo: "Mac Mini SSD, RAM, logic board repair in Delhi",
+      link: "/services/mac-mini-repair",
+    },
+    {
+      title: "Surface Repairs",
+      src: "surface-repair.jpeg",
+      seo: "Surface Pro screen, battery and motherboard repair",
+      link: "/services/surface-repair",
+    },
+  ].map((service, i) => (
+    <Link key={i} href={service.link} passHref>
+      <div className="flex flex-col items-center gap-2 shadow-lg rounded-xl w-[180px] bg-neutral-100 cursor-pointer hover:scale-[1.02] transition-transform duration-300">
         <div className="relative w-full aspect-square -mb-1">
           <Image
             src={`/services/${service.src}`}
             fill
             className="rounded-t-xl object-cover"
-            alt={service.seo} // SEO-friendly
+            alt={service.seo}
             sizes="180px"
           />
         </div>
         <h2 className="my-2 text-center text-sm font-semibold px-2">
           {service.title}
         </h2>
-        <span className="sr-only">{service.seo}</span> {/* Screen readers only */}
+        <span className="sr-only">{service.seo}</span>
       </div>
-    ))}
-  </div>
-
-  <p className="text-gray-400 mt-8 text-md text-center max-w-2xl px-4">
-    Trusted by 5,000+ customers since 2009. Visit us at Nehru Place or schedule a free pickup today.
-  </p>
+    </Link>
+  ))}
 </div>
-
 
 
 
