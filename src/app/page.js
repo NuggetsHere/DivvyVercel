@@ -267,7 +267,6 @@ export default function Home() {
 </section>
 
 
-      {/* Services Section */}
 {/* Services Section */}
 <div
   id="services"

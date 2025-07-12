@@ -4,8 +4,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { SignupFormDemo } from "../components/form";
-import { AccordionDemo } from "../components/faq";
+import { SignupFormDemo } from "../../components/form";
+import { AccordionDemo } from "../../components/faq";
 
 export const metadata = {
   title: "MacBook Repair Delhi | Certified Apple Mac Repair - Divvy Computronix",
