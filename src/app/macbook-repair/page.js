@@ -1,203 +1,4 @@
-// // // File: app/macbook-repair/page.jsx
-// // import {SignupFormDemo} from "../components/form";
 
-// // export default function MacBookRepairPage() {
-// //   return (
-// //     <main className="relative min-h-screen bg-white text-black overflow-hidden">
-// //       {/* Background with parametric image */}
-// //       <div
-// //         className="absolute inset-0 z-0 bg-no-repeat bg-cover bg-center opacity-100"
-// //         style={{ backgroundImage: "url('/images/macbook.png')" }}
-// //       />
-
-// //       {/* Foreground content */}
-// //       <section className="relative z-10 py-24 px-6 sm:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-// //         {/* Text */}
-// //         <div className="flex-1 max-w-xl mb-20">
-// //           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-// //             MacBook Not Working? <br className="hidden md:block" /> We’ll Fix It Fast
-// //           </h1>
-// //           <p className="text-lg text-gray-700 mb-8">
-// //             Certified Mac Repair in Delhi NCR · Pickup Available
-// //           </p>
-// //         </div>
-
-// //         {/* Contact Form Card */}
-// //         <div className="flex-1 w-full max-w-md bg-white/90 backdrop-blur-md border border-gray-200 shadow-lg rounded-2xl p-8 pt-10">
-// //           <SignupFormDemo service="MacBook Repair" />
-// //         </div>
-// //       </section>
-// //     </main>
-// //   );
-// // }
-
-
-
-
-// import Image from "next/image";
-// import Link from "next/link";
-// import { SignupFormDemo } from "../components/form";
-// import { AccordionDemo } from "../components/faq";
-
-// export const metadata = {
-//   title: "MacBook Repair Delhi | Certified Apple Mac Repair - Divvy Computronix",
-//   description: "Fast, affordable MacBook repair in Delhi NCR by certified experts. Get pickup and drop, original parts, and same-day service at Divvy Computronix.",
-//   keywords: [
-//     "MacBook repair Delhi",
-//     "MacBook repair",
-//     "MacBook repair Delhi NCR",
-//     "laptop repair Delhi NCR",
-//     "Mac repair near me",
-//     "Apple laptop service center Delhi",
-//     "MacBook air repair Delhi",
-//     "MacBook pro screen replacement Delhi",
-//     "certified mac repair delhi",
-//     "macbook not turning on"
-//   ].join(", "),
-//   alternates: {
-//     canonical: "https://divvycomputronix.com/macbook-repair",
-//   }
-// };
-
-// export default function MacBookRepairPage() {
-//   return (
-//     <main className="relative bg-white text-black overflow-hidden">
-//       {/* Hero Section */}
-//       <section className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-between gap-10 px-6 sm:px-12 pt-24 max-w-7xl mx-auto">
-//         {/* Left Text */}
-//         <div className="flex-1 max-w-xl z-10">
-//           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-//             MacBook Not Working? <br /> We'll Fix It Fast
-//           </h1>
-//           <p className="text-lg text-gray-700 mb-6">
-//             Same-day certified Mac repair in Delhi NCR
-//           </p>
-//         </div>
-
-//         {/* Form Card */}
-//         <div className="flex-1 w-full max-w-md bg-white border border-gray-200 shadow-xl rounded-2xl p-8 z-10">
-//           <h3 className="text-lg font-semibold mb-4">Need a quick fix?</h3>
-//           <p className="text-sm text-gray-600 mb-6">Start a callback.</p>
-//           <SignupFormDemo service="MacBook Repair" />
-//         </div>
-
-//         {/* Mac Image in Background */}
-//         <Image
-//           src="/images/macbook.png"
-//           alt="MacBook"
-//           fill
-//           className="absolute inset-0 object-cover opacity-10 pointer-events-none"
-//         />
-//       </section>
-
-//       {/* Our Services */}
-//       <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
-//   <h2 className="text-2xl md:text-3xl font-semibold mb-10">Our Services</h2>
-
-//   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-//     <ServiceCard
-//       icon="/icons/motherboard-repair.png"
-//       title="Motherboard Repair"
-//       description="Repairs for all MacBook models: Air, Pro, Intel, and M-series."
-//     />
-//     <ServiceCard
-//       icon="/icons/screen-repair.png"
-//       title="Screen Flicker / Blackout"
-//       description="We fix Flexgate, black screens, and damaged displays."
-//     />
-//     <ServiceCard
-//       icon="/icons/power.png"
-//       title="MacBook Won’t Turn On"
-//       description="Power, logic board, or charging circuit issues diagnosed."
-//     />
-//     <ServiceCard
-//       icon="/icons/battery.png"
-//       title="Battery Not Charging"
-//       description="Original battery replacement & calibration for all models."
-//     />
-//     <ServiceCard
-//       icon="/icons/overheat.png"
-//       title="Overheating & Fan Noise"
-//       description="Cleanups & thermal fixes for overheating MacBooks."
-//     />
-//     <ServiceCard
-//       icon="/icons/keyboard-repair.png"
-//       title="Keyboard / Trackpad"
-//       description="We fix butterfly keyboard & trackpad responsiveness."
-//     />
-//     <ServiceCard
-//       icon="/icons/liquid-damage.png"
-//       title="Liquid Damage Repair"
-//       description="Internal cleaning, diagnostics & logic board repair."
-//     />
-//     <ServiceCard
-//       icon="/icons/boot.png"
-//       title="macOS Stuck on Boot"
-//       description="Fix frozen Apple logo, kernel panics & boot loops."
-//     />
-//     <ServiceCard
-//       icon="/icons/wifi.png"
-//       title="WiFi / Bluetooth Issue"
-//       description="Network hardware & macOS connectivity problems solved."
-//     />
-//     <ServiceCard
-//       icon="/icons/data-recovery.jpg"
-//       title="Data Recovery"
-//       description="Recover files from dead Macs, SSD failures & more."
-//     />
-//   </div>
-// </section>
-
-
-//       {/* Why Choose Us */}
-//       <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
-//         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Why Choose Us?</h2>
-//         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 list-disc pl-5">
-//           <li>Experienced technicians with Apple certification</li>
-//           <li>Genuine Apple parts for reliable repairs</li>
-//           <li>No fix, no fee – customer-first policy</li>
-//           <li>Pickup and delivery service for your convenience</li>
-//         </ul>
-//       </section>
-
-//       {/* FAQ */}
-//       <section className="relative px-6 sm:px-12 py-20 max-w-5xl mx-auto">
-//         <h2 className="text-2xl md:text-3xl font-semibold mb-8">Frequently Asked Questions</h2>
-//         <AccordionDemo />
-//       </section>
-
-//       {/* Internal Links */}
-//       <section className="relative px-6 sm:px-12 py-16 max-w-5xl mx-auto text-gray-700 text-sm">
-//         <p className="mb-4">
-//           We also offer{" "}
-//           <Link href="/services" className="text-blue-600 underline">
-//             laptop repair in Delhi NCR
-//           </Link>{" "}
-//           and sell{" "}
-//           <Link href="/services" className="text-blue-600 underline">
-//             refurbished laptops and second-hand laptops
-//           </Link>{" "}
-//           with a warranty. Need help choosing the right service?{" "}
-//           <Link href="/contact" className="text-blue-600 underline">
-//             Get in touch with our team
-//           </Link>
-//           .
-//         </p>
-//       </section>
-//     </main>
-//   );
-// }
-
-// // ServiceCard Component
-// function ServiceCard({ icon, title, description }) {
-//   return (
-//     <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
-//       <Image src={icon} alt={title} width={60} height={60} className="mb-4" />
-//       <h3 className="font-semibold text-base mb-1">{title}</h3>
-//       <p className="text-sm text-gray-600">{description}</p>
-//     </div>
-//   );
-// }
 
 
 
@@ -245,7 +46,7 @@ export default function MacBookRepairPage() {
     {/* Left Text */}
     <div className="flex-1 max-w-xl">
       <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-        MacBook Not Working? <br /> We'll Fix It Fast
+        MacBook Not Working? <br /> We&apos;ll Fix It Fast
       </h1>
       <p className="text-lg text-gray-700 mb-6">
         Same-day certified Mac repair in Delhi NCR
@@ -279,7 +80,7 @@ export default function MacBookRepairPage() {
     />
     <ServiceCard
       icon="/icons/power.png"
-      title="MacBook Won’t Turn On"
+      title="MacBook Won&apos;t Turn On"
       description="Power, logic board, or charging circuit issues diagnosed."
     />
     <ServiceCard
@@ -324,7 +125,7 @@ export default function MacBookRepairPage() {
       <section className="relative px-6 sm:px-12 py-16 max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Trusted MacBook Repair Experts in Delhi NCR</h2>
         <p className="text-gray-700 text-base leading-relaxed mb-4">
-          At Divvy Computronix, we provide fast and reliable <strong>MacBook repair services in Delhi NCR</strong> — trusted by professionals, students, and businesses across the city. Whether you're facing hardware issues like screen flickering, keyboard failure, or battery problems, or software issues like macOS crashes or boot loops, we’ve got you covered.
+          At Divvy Computronix, we provide fast and reliable <strong>MacBook repair services in Delhi NCR</strong> — trusted by professionals, students, and businesses across the city. Whether you&apos;re facing hardware issues like screen flickering, keyboard failure, or battery problems, or software issues like macOS crashes or boot loops, we&apos;ve got you covered.
         </p>
         <p className="text-gray-700 text-base leading-relaxed mb-4">
           We service all MacBook models — including MacBook Air, MacBook Pro, Intel-based systems, and Apple M1/M2 machines. Our technicians are Apple-certified and trained in ESD-safe practices to protect your device during the repair process. We use <strong>genuine Apple parts</strong> for replacements and offer <strong>warranty-backed services</strong> to ensure peace of mind.
