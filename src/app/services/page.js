@@ -1,5 +1,7 @@
 import { BentoGridSecondDemo } from "../components/bentogrid";
 import Script from "next/script";
+import ServiceCard from "../../components/servicecard";
+
 
 export const metadata = {
   title: "Best Laptop & MacBook Repair Services in Delhi NCR | Divvy Computronix",

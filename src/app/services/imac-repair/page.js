@@ -395,6 +395,8 @@ import { SignupFormDemo } from "../../components/form";
 import Image from "next/image";
 import Link from "next/link";
 // import { SignupFormDemo } from "../components/form";
+import ServiceCard from "../../components/servicecard";
+
 
 export const metadata = {
   title: "iMac Repair Delhi | Apple iMac Service Centre Alternative - Divvy Computronix",
@@ -549,16 +551,5 @@ export default function IMacRepairPage() {
         </div>
       </section>
     </main>
-  );
-}
-
-// Local ServiceCard for this file
-function ServiceCard({ icon, title, description }) {
-  return (
-    <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
-      <Image src={icon} alt={title} width={40} height={40} className="mb-4" />
-      <h3 className="font-semibold text-base mb-1">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-    </div>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SignupFormDemo } from "../../components/form";
+import ServiceCard from "../../components/servicecard";
 
 export const metadata = {
   title: "Microsoft Surface Repair Delhi | Screen & Battery Fix - Divvy Computronix",
@@ -109,16 +110,5 @@ export default function SurfaceRepairPage() {
         </div>
       </section>
     </main>
-  );
-}
-
-// Reusable Service Card
-function ServiceCard({ icon, title, description }) {
-  return (
-    <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
-      <Image src={icon} alt={title} width={40} height={40} className="mb-4" />
-      <h3 className="font-semibold text-base mb-1">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-    </div>
   );
 }

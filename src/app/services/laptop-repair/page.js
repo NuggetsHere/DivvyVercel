@@ -2,6 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SignupFormDemo } from "../../components/form";
+import ServiceCard from "../../components/servicecard";
+
 
 export const metadata = {
   title: "Laptop Repair Delhi | Pickup & Expert Diagnosis - Divvy Computronix",
@@ -55,16 +57,16 @@ export default function LaptopRepairPage() {
       <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold mb-10">Laptop Repair Services We Offer</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          <ServiceCard icon="/icons/laptop-screen.png" title="Screen Replacement" description="Fix cracked, broken, or flickering displays." />
-          <ServiceCard icon="/icons/laptop-battery.png" title="Battery Issues" description="Battery not holding charge? We replace with OEM cells." />
-          <ServiceCard icon="/icons/laptop-hinge.png" title="Broken Hinges" description="Repair or replace damaged or stiff laptop hinges." />
-          <ServiceCard icon="/icons/laptop-overheat.png" title="Overheating" description="Fan cleaning, thermal paste, and cooling optimization." />
-          <ServiceCard icon="/icons/laptop-boot.png" title="Stuck at Boot" description="Resolve OS boot errors, blue screen & BIOS issues." />
-          <ServiceCard icon="/icons/laptop-water.png" title="Liquid Damage" description="Motherboard-level repair and corrosion cleaning." />
-          <ServiceCard icon="/icons/laptop-keyboard.png" title="Keyboard Fault" description="Replace unresponsive, broken, or stuck keys." />
-          <ServiceCard icon="/icons/laptop-usb.png" title="Port Not Working" description="Fix loose charging, USB, or headphone jacks." />
-          <ServiceCard icon="/icons/laptop-upgrade.png" title="SSD / RAM Upgrade" description="Boost performance with upgraded SSD and memory." />
-          <ServiceCard icon="/icons/laptop-data.png" title="Data Recovery" description="Recover files from dead laptops or failed hard drives." />
+          <ServiceCard icon="/icons/screen-repair.png" title="Screen Replacement" description="Fix cracked, broken, or flickering displays." />
+          <ServiceCard icon="/icons/battery.png" title="Battery Issues" description="Battery not holding charge? We replace with OEM cells." />
+          <ServiceCard icon="/icons/hinge-broken.png" title="Broken Hinges" description="Repair or replace damaged or stiff laptop hinges." />
+          <ServiceCard icon="/icons/overheat.png" title="Overheating" description="Fan cleaning, thermal paste, and cooling optimization." />
+          <ServiceCard icon="/icons/boot.png" title="Stuck at Boot" description="Resolve OS boot errors, blue screen & BIOS issues." />
+          <ServiceCard icon="/icons/liquid-damage.png" title="Liquid Damage" description="Motherboard-level repair and corrosion cleaning." />
+          <ServiceCard icon="/icons/keyboard-repair.png" title="Keyboard Fault" description="Replace unresponsive, broken, or stuck keys." />
+          <ServiceCard icon="/icons/usb-not.png" title="Port Not Working" description="Fix loose charging, USB, or headphone jacks." />
+          <ServiceCard icon="/icons/ram-upgrade.png" title="SSD / RAM Upgrade" description="Boost performance with upgraded SSD and memory." />
+          <ServiceCard icon="/icons/data-recovery.jpg" title="Data Recovery" description="Recover files from dead laptops or failed hard drives." />
         </div>
       </section>
 
@@ -110,16 +112,5 @@ export default function LaptopRepairPage() {
         </div>
       </section>
     </main>
-  );
-}
-
-// Reusable Service Card
-function ServiceCard({ icon, title, description }) {
-  return (
-    <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
-      <Image src={icon} alt={title} width={40} height={40} className="mb-4" />
-      <h3 className="font-semibold text-base mb-1">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-    </div>
   );
 }

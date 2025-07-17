@@ -6,9 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { SignupFormDemo } from "../../components/form";
 import { AccordionDemo } from "../../components/faq";
+import ServiceCard from "../../components/servicecard";
 
 export const metadata = {
-  title: "MacBook Repair Delhi | Certified Apple Mac Repair - Divvy Computronix",
+  title: "MacBook Repair Delhi NCR | Certified Apple Mac Repair - Divvy Computronix",
   description:
     "Fast, affordable MacBook repair in Delhi NCR by certified experts. Get pickup and drop, original parts, and same-day service at Divvy Computronix.",
   keywords: [
@@ -65,7 +66,7 @@ export default function MacBookRepairPage() {
 
 
       {/* Services */}
-      <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
+      {/* <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold mb-10">Our Services</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           <ServiceCard
@@ -119,7 +120,67 @@ export default function MacBookRepairPage() {
       description="Recover files from dead Macs, SSD failures & more."
     />
         </div>
-      </section>
+      </section> */}
+
+
+
+<section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
+  <h2 className="text-2xl md:text-3xl font-semibold mb-10">Our Services</h2>
+
+  {/* Refined Grid Layout */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+    <ServiceCard
+      icon="/icons/motherboard-repair.png"
+      title="Motherboard Repair"
+      description="Repairs for all MacBook models: Air, Pro, Intel, and M-series."
+    />
+    <ServiceCard
+      icon="/icons/screen-repair.png"
+      title="Screen Flicker / Blackout"
+      description="We fix Flexgate, black screens, and damaged displays."
+    />
+    <ServiceCard
+      icon="/icons/power.png"
+      title="MacBook Won't Turn On"
+      description="Power, logic board, or charging circuit issues diagnosed."
+    />
+    <ServiceCard
+      icon="/icons/battery.png"
+      title="Battery Not Charging"
+      description="Original battery replacement & calibration for all models."
+    />
+    <ServiceCard
+      icon="/icons/overheat.png"
+      title="Overheating & Fan Noise"
+      description="Cleanups & thermal fixes for overheating MacBooks."
+    />
+    <ServiceCard
+      icon="/icons/keyboard-repair.png"
+      title="Keyboard / Trackpad"
+      description="We fix butterfly keyboard & trackpad responsiveness."
+    />
+    <ServiceCard
+      icon="/icons/liquid-damage.png"
+      title="Liquid Damage Repair"
+      description="Internal cleaning, diagnostics & logic board repair."
+    />
+    <ServiceCard
+      icon="/icons/boot.png"
+      title="macOS Stuck on Boot"
+      description="Fix frozen Apple logo, kernel panics & boot loops."
+    />
+    <ServiceCard
+      icon="/icons/wifi.png"
+      title="WiFi / Bluetooth Issue"
+      description="Network hardware & macOS connectivity problems solved."
+    />
+    <ServiceCard
+      icon="/icons/data-recovery.jpg"
+      title="Data Recovery"
+      description="Recover files from dead Macs, SSD failures & more."
+    />
+  </div>
+</section>
 
       {/* About Repair Services */}
       <section className="relative px-6 sm:px-12 py-16 max-w-5xl mx-auto">
@@ -210,16 +271,61 @@ export default function MacBookRepairPage() {
 
 
 
-// ServiceCard Component
-function ServiceCard({ icon, title, description }) {
-  return (
-    <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
-      <Image src={icon} alt={title} width={40} height={40} className="mb-4" />
-      <h3 className="font-semibold text-base mb-1">{title}</h3>
-      <p className="text-sm text-gray-600">{description}</p>
-    </div>
-  );
-}
+// // ServiceCard Component
+// function ServiceCard({ icon, title, description }) {
+//   return (
+//     <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center">
+//       <Image src={icon} alt={title} width={60} height={60} className="mb-4" />
+//       <h3 className="font-semibold text-base mb-1">{title}</h3>
+//       <p className="text-[12px] text-gray-600">{description}</p>
+//     </div>
+//   );
+// }
+
+
+// function ServiceCard({ icon, title, description }) {
+//   return (
+//     <div className="bg-white shadow border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center h-60">
+//       {/* Fixed-height icon container */}
+//       <div className="h-[60px] w-[60px] mb-4 flex items-center justify-center">
+//         <Image
+//           src={icon}
+//           alt={title}
+//           width={60}
+//           height={60}
+//           className="object-contain max-h-full"
+//         />
+//       </div>
+
+//       {/* Text content */}
+//       <h3 className="font-semibold text-base mb-1">{title}</h3>
+//       <p className="text-[12px] text-gray-600">{description}</p>
+//     </div>
+//   );
+// }
+
+
+
+// function ServiceCard({ icon, title, description }) {
+//   return (
+//     <div className="bg-white shadow-sm hover:shadow-md transition-shadow border border-gray-200 rounded-xl p-4 sm:p-5 flex flex-col items-center text-center h-50">
+//       {/* Uniform Icon Container */}
+//       <div className="h-[60px] w-[60px] mb-3 flex items-center justify-center rounded-full ">
+//         <Image
+//           src={icon}
+//           alt={title}
+//           width={55}
+//           height={55}
+//           className="object-contain max-h-full"
+//         />
+//       </div>
+
+//       {/* Title and Description */}
+//       <h3 className="font-medium text-sm mb-1">{title}</h3>
+//       <p className="text-[11px] text-gray-600 leading-snug">{description}</p>
+//     </div>
+//   );
+// }
 
 
 
