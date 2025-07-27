@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 export default function ServiceCard({ icon, title, description }) {
   return (
-    <div className="bg-white shadow-sm hover:shadow-md transition-shadow border border-gray-200 rounded-xl p-4 sm:p-5 flex flex-col items-center text-center h-50">
+    <div className="bg-white shadow-sm hover:shadow-md transition-shadow border border-gray-200 rounded-xl 
+    hover:scale-[1.02] p-4 sm:p-5 flex flex-col items-center text-center h-50">
       {/* Uniform Icon Container */}
       <div className="h-[60px] w-[60px] mb-3 flex items-center justify-center rounded-full ">
         <Image

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SignupFormDemo } from "../components/form";
+import { SignupFormDemo } from "../../components/form";
 import ServiceCard from "../../components/servicecard";
 
 
 export const metadata = {
-  title: "Gaming PC Repair Delhi | Custom Rig Fixes - Divvy Computronix",
+  title: "Gaming PC Repair Delhi NCR | Custom Rig Fixes - Divvy Computronix",
   description:
     "Expert gaming PC repair in Delhi NCR — from GPU issues to liquid cooling, we handle it all. Pickup service available. Fix boot issues, FPS drops, and overheating now.",
   keywords: [

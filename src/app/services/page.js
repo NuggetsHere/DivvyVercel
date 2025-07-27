@@ -1,6 +1,5 @@
 import { BentoGridSecondDemo } from "../components/bentogrid";
 import Script from "next/script";
-import ServiceCard from "../../components/servicecard";
 
 
 export const metadata = {

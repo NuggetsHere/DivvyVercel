@@ -18,7 +18,7 @@ import { InfiniteMovingCardsDemo }from "./components/certifications";
 export const metadata = {
   title: 'Laptop & MacBook Repair Experts in Delhi NCR | Second-Hand & Refurbished Laptops | Divvy Computronix',
   description:
-    'Fast laptop repair in Nehru Place, Delhi. Get SAME DAY service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
+    'Fast laptop repair in Nehru Place, Delhi. Get SAME DAY service, free pickup & diagnosis. Experts in MacBook, Windows & PC repair. Expert Laptop Repair in Nehru Place, Delhi. Fast, affordable service for MacBooks, Windows laptops, gaming PCs & more. Home pickup & diagnosis available!',
   keywords: [
     // Apple & MacBook Focus
     'MacBook repair Nehru Place',
@@ -59,7 +59,7 @@ export const metadata = {
   openGraph: {
     title: 'Laptop & MacBook Repair Experts in Delhi NCR | Second-Hand & Refurbished Laptops | Divvy Computronix',
     description:
-      'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Expert MacBook, iPhone, and laptop repair services in Nehru Place since 2009. Trusted for motherboard repairs, screen replacements, and refurbished Apple devices.',
+      'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repair. Expert MacBook, iPhone, and laptop repair services in Nehru Place since 2009. Trusted for motherboard repair, screen replacements, and refurbished Apple devices.',
     url: 'https://divvycomputronix.com', // Replace with your domain
     type: 'website',
     locale: 'en_IN',
@@ -76,7 +76,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Laptop & MacBook Repair Experts in Delhi NCR | Second-Hand & Refurbished Laptops | Divvy Computronix',
     description:
-      'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Specialists in MacBook, iMac, iPhone, and laptop repairs in Delhi NCR. Fast 24-hour service, refurbished devices, and Apple motherboard repair experts.',
+      'Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repair. Specialists in MacBook, iMac, iPhone, and laptop repair in Delhi NCR. Fast 24-hour service, refurbished devices, and Apple motherboard repair experts.',
     images: ['https://divvycomputronix.com/og-image.png'], // Same as OG image
   },
   metadataBase: new URL('https://divvycomputronix.com'), // Replace with your domain
@@ -124,7 +124,7 @@ export default function Home() {
               },
               "openingHours": ["Mo-Sa 10:00-21:00"],
               "priceRange": "₹₹",
-              "description": "Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repairs. Divvy Computronix is a trusted repair and service center in Nehru Place, Delhi NCR, specializing in premium refurbished MacBooks, laptops, and expert repairs for MacBooks, iPhones, iMacs, Mac Minis, Surface devices, gaming PCs, and more. Known for fast turnaround, expert diagnostics, and a no fix, no fee policy, we serve individual and business clients across India with courier pickup options.",
+              "description": "Fast laptop repair in Nehru Place, Delhi. Get 24-hour service, free pickup & diagnosis. Experts in MacBook, Windows & PC repair. Divvy Computronix is a trusted repair and service center in Nehru Place, Delhi NCR, specializing in premium refurbished MacBooks, laptops, and expert repair for MacBooks, iPhones, iMacs, Mac Minis, Surface devices, gaming PCs, and more. Known for fast turnaround, expert diagnostics, and a no fix, no fee policy, we serve individual and business clients across India with courier pickup options.",
               "founder": {
                 "@type": "Person",
                 "name": "Prakash Kumar"
@@ -179,7 +179,7 @@ export default function Home() {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "iPhone Repairs",
+                    "name": "iPhone Repair",
                     "areaServed": [
                       { "@type": "Place", "name": "Nehru Place" },
                       { "@type": "Place", "name": "Delhi NCR" }
@@ -190,7 +190,7 @@ export default function Home() {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "iMac and Mac Mini Repairs",
+                    "name": "iMac and Mac Mini Repair",
                     "areaServed": [
                       { "@type": "Place", "name": "Nehru Place" },
                       { "@type": "Place", "name": "Delhi NCR" }
@@ -201,7 +201,7 @@ export default function Home() {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Surface Device Repairs",
+                    "name": "Surface Device Repair",
                     "areaServed": [
                       { "@type": "Place", "name": "Nehru Place" },
                       { "@type": "Place", "name": "Delhi NCR" }
@@ -227,7 +227,7 @@ export default function Home() {
       
     <section
   id="hero"
-  className="md:pt-48 pt-32 py-24 px-10 pl-12 md:pl-0 w-full bg-gradient-to-b from-transparent via-[#e0f2fe] to-transparent bg-white"
+  className="md:pt-48 pt-32 py-24 px-10 pl-12 md:pl-0 w-full bg-gradient-to-b from-transparent via-[#00BFFF]/30 to-transparent bg-white"
 >
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 md:pl-8 gap-12 items-center">
     <div>
@@ -245,11 +245,18 @@ export default function Home() {
         motherboards, graphic card failures, and non-booting PCs, we’ve
         seen (and fixed) it all.
       </h2>
-      <Link href="/contact">
-        <button className="px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-all">
-          Fix Now!
-        </button>
-      </Link>
+<Link href="/contact">
+<button className="button1">
+   REPAIR NOW!  
+  <svg fill="currentColor" viewBox="0 0 24 24" className="icon1">
+    <path
+      clipRule="evenodd"
+      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+      fillRule="evenodd"
+    ></path>
+  </svg>
+</button>
+</Link>
     </div>
 
     <div className="hidden md:block">
@@ -266,13 +273,16 @@ export default function Home() {
   </div>
 </section>
 
+<div className="text-4xl md:text-5xl underline decoration-1 underline-offset-4 text-center mb-12">
+  Repair services we offer
+</div>
 
-<div className="flex flex-wrap md:flex-nowrap justify-center items-start gap-6 w-full max-w-7xl px-4">
+<div className="flex flex-wrap md:flex-nowrap justify-center items-start gap-6 max-w-7xl px-4">
   {[
     {
-      title: "MacBook Repairs",
+      title: "MacBook Repair",
       src: "macbook-repair.jpg",
-      seo: "Screen replacements, logic board fixes, water damage MacBook repairs",
+      seo: "Screen replacements, logic board fixes, water damage MacBook repair",
       link: "/services/macbook-repair",
     },
     {
@@ -282,48 +292,48 @@ export default function Home() {
       link: "/services/laptop-repair",
     },
     {
-      title: "iMac Repairs",
+      title: "iMac Repair",
       src: "imac-repair.jpg",
       seo: "Expert iMac servicing, SSD upgrades, GPU fixes in Nehru Place",
       link: "/services/imac-repair",
     },    
     {
-      title: "iPhone Repairs",
+      title: "iPhone Repair",
       src: "phone-repair.jpg",
       seo: "iPhone screen, battery and motherboard-level repair in Delhi",
       link: "/services/iphone-repair",
     },
     {
-      title: "Gaming PC Repairs",
+      title: "Gaming PC Repair",
       src: "gaming-pc-repair.jpg",
       seo: "Custom gaming PC repair including GPU and fan issues",
       link: "/services/gaming-pc-repair",
     },
     {
-      title: "Mac Mini Repairs",
+      title: "Mac Mini Repair",
       src: "mac-mini-repair.jpg",
       seo: "Mac Mini SSD, RAM, logic board repair in Delhi",
       link: "/services/mac-mini-repair",
     },
     {
-      title: "Surface Repairs",
+      title: "Surface Repair",
       src: "surface-repair.jpeg",
       seo: "Surface Pro screen, battery and motherboard repair",
       link: "/services/surface-repair",
     },
   ].map((service, i) => (
     <Link key={i} href={service.link} passHref>
-      <div className="flex flex-col items-center gap-2 shadow-lg rounded-xl w-[180px] bg-neutral-100 cursor-pointer hover:scale-[1.02] transition-transform duration-300">
-        <div className="relative w-full aspect-square -mb-1">
+      <div className="flex flex-col items-center gap-2 shadow-lg rounded-xl w-[10rem] hover:bg-[#c8edff]  group hover:scale-[1.1]  duration-300">
+        <div className="relative w-full overflow-clip aspect-square -mb-1 ">
           <Image
             src={`/services/${service.src}`}
             fill
-            className="rounded-t-xl object-cover"
+            className="group-hover:scale-105 duration-300 rounded-t-xl object-cover"
             alt={service.seo}
             sizes="180px"
           />
         </div>
-        <h2 className="my-2 text-center text-sm font-semibold px-2">
+        <h2 className="my-2 h-full text-center text-sm font-semibold px-2 ">
           {service.title}
         </h2>
         <span className="sr-only">{service.seo}</span>
@@ -339,12 +349,12 @@ export default function Home() {
 {/* Products Section */}
 <div
   id="products"
-  className="h-full bg-[#171717] rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 bg-black mt-10"
+  className="h-full border-dashed border-2 border-spacing rounded-3xl pt-16 pb-16 flex flex-col items-center justify-center w-11/12 mt-10"
 >
-  <h1 className="text-3xl md:text-5xl text-white font-bold text-center px-4 leading-snug">
+  <h1 className="text-3xl md:text-5xl text-black font-bold text-center px-4 leading-snug">
     Buy Refurbished & Second-Hand MacBooks, iPhones & Laptops in Delhi NCR
   </h1>
-  <p className="text-gray-300 mt-4 text-center text-sm md:text-base px-4 max-w-3xl">
+  <p className="text-gray-800 mt-4 text-center text-sm md:text-base px-4 max-w-3xl">
     Professionally tested, certified second-hand devices with warranty and expert support.
   </p>
 
@@ -443,7 +453,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-6xl tracking-tighter uppercase border-b-2 font-serif pt-10">
             Testimonials
           </h2>
-          <p className="md:text-xl mt-8 text-center">
+          <p className="md:text-xl text-lg mt-8 text-center">
             Hear what people have to say about us
           </p>
         </div>
