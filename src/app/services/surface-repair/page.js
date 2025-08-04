@@ -55,17 +55,18 @@ export default function SurfaceRepairPage() {
       <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold mb-10">Microsoft Surface Repairs We Offer</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          <ServiceCard icon="/icons/surface-screen.png" title="Screen Replacement" description="Fix cracked or unresponsive touchscreens." />
-          <ServiceCard icon="/icons/surface-battery.png" title="Battery Replacement" description="Fix fast-draining or non-charging battery." />
-          <ServiceCard icon="/icons/surface-keyboard.png" title="Keyboard/Touchpad Fix" description="Solve issues with detachable or type cover." />
-          <ServiceCard icon="/icons/surface-boot.png" title="Boot / Logo Stuck" description="Fix boot errors, OS recovery, or BIOS issues." />
-          <ServiceCard icon="/icons/surface-ssd.png" title="SSD Upgrade / Recovery" description="Upgrade storage or recover data from device." />
-          <ServiceCard icon="/icons/surface-charging.png" title="Charging Port Issue" description="Fix loose charging port or not powering on." />
-          <ServiceCard icon="/icons/surface-hinge.png" title="Hinge Replacement" description="Fix wobbling, broken, or jammed hinges." />
-          <ServiceCard icon="/icons/surface-overheat.png" title="Overheating" description="Thermal paste, cleaning & airflow optimization." />
-          <ServiceCard icon="/icons/surface-mic.png" title="Mic / Camera Fault" description="Fix non-working webcam or microphone." />
-          <ServiceCard icon="/icons/surface-firmware.png" title="Firmware / TPM Error" description="Fix Surface firmware, BitLocker, or BIOS lock." />
-        </div>
+  <ServiceCard icon="/icons/surface-screen.png" title="Screen Replacement" description="Fix cracked or unresponsive touchscreens." />
+  <ServiceCard icon="/icons/surface-battery.png" title="Battery Replacement" description="Resolve battery drain, swelling, or not powering on." />
+  <ServiceCard icon="/icons/surface-charging.png" title="Charging Port Repair" description="Fix loose charging port or charging failures." />
+  <ServiceCard icon="/icons/surface-keyboard.png" title="Keyboard / Touchpad Fix" description="Solve Type Cover or touchpad connectivity issues." />
+  <ServiceCard icon="/icons/surface-boot-new.png" title="Boot / Logo Stuck Repair" description="Fix stuck on Surface logo or Windows boot errors." />
+  <ServiceCard icon="/icons/surface-touch.png" title="Touchscreen Repair" description="Fix ghost touches or unresponsive areas." />
+  <ServiceCard icon="/icons/surface-overheat.png" title="Overheating Fix" description="Thermal paste, cleaning & airflow optimization." />
+  <ServiceCard icon="/icons/surface-wifi.png" title="Wi-Fi / Bluetooth Repair" description="Fix network card issues or wireless connectivity." />
+  <ServiceCard icon="/icons/surface-software.png" title="Software / OS Reinstall" description="Fix slow devices, OS errors & driver updates." />
+  <ServiceCard icon="/icons/data-recovery.jpg" title="Data Recovery" description="Recover files from dead or damaged Surface devices." />
+</div>
+
       </section>
 
       {/* About Section */}

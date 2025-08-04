@@ -91,7 +91,7 @@ export default function IMacRepairPage() {
             description="Recover data from dead iMacs or failed drives."
           />
           <ServiceCard
-            icon="/icons/imac-usb.png"
+            icon="/icons/imac-port.png"
             title="Ports / Peripherals Not Working"
             description="Fix USB, HDMI, or SD card port issues on iMac."
           />

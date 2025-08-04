@@ -59,52 +59,52 @@ export default function MacMiniRepairPage() {
         <h2 className="text-2xl md:text-3xl font-semibold mb-10">Mac Mini Repair Services</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           <ServiceCard
-            icon="/icons/macmini-power.png"
+            icon="/icons/mac-mini-power.png"
             title="No Power / No Boot"
             description="We diagnose logic board, power unit & SSD issues."
           />
           <ServiceCard
-            icon="/icons/macmini-hdmi.png"
+            icon="/icons/mac-mini-display.png"
             title="HDMI / Display Issue"
             description="Fix no signal, black screen or flickering HDMI output."
           />
           <ServiceCard
-            icon="/icons/macmini-ssd.png"
+            icon="/icons/mac-mini-ssd.png"
             title="SSD Upgrade"
             description="Speed up your Mac Mini with NVMe/PCIe SSD installation."
           />
           <ServiceCard
-            icon="/icons/macmini-usb.png"
+            icon="/icons/mac-mini-ports.png"
             title="USB / Port Repair"
             description="We fix loose, dead or malfunctioning I/O ports."
           />
           <ServiceCard
-            icon="/icons/macmini-fan.png"
+            icon="/icons/mac-mini-overheat.png"
             title="Fan Noise / Overheating"
             description="Cleaning & thermal paste replacement for cooler operation."
           />
           <ServiceCard
-            icon="/icons/macmini-data.png"
+            icon="/icons/data-recovery.jpg"
             title="Data Recovery"
             description="Recover files from dead Mac Mini or failed SSD."
           />
           <ServiceCard
-            icon="/icons/macmini-os.png"
+            icon="/icons/boot.png"
             title="macOS Stuck or Crashed"
             description="We reinstall OS & recover important files if needed."
           />
           <ServiceCard
-            icon="/icons/macmini-network.png"
+            icon="/icons/mac-mini-wifi.png"
             title="WiFi / Bluetooth Problems"
             description="Fix connectivity problems in Intel & M-series units."
           />
           <ServiceCard
-            icon="/icons/macmini-upgrade.png"
+            icon="/icons/mac-mini-ram.png"
             title="RAM / Performance Upgrade"
             description="RAM upgrades available for compatible Intel models."
           />
           <ServiceCard
-            icon="/icons/macmini-cleaning.png"
+            icon="/icons/mac-mini-cleaning.png"
             title="Internal Cleaning"
             description="Prevent overheating and extend life with regular cleaning."
           />

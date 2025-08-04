@@ -56,18 +56,19 @@ export default function GamingPcRepairPage() {
       {/* Services Section */}
       <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold mb-10">Gaming PC Repair Services</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          <ServiceCard icon="/icons/gpu.png" title="GPU Not Detected" description="Fix GPU crashes, black screen, or PCIe slot issues." />
-          <ServiceCard icon="/icons/thermal.png" title="Overheating" description="Thermal repaste, cooler install & airflow correction." />
-          <ServiceCard icon="/icons/bootloop.png" title="PC Not Booting" description="Troubleshoot BIOS, power rails & POST errors." />
-          <ServiceCard icon="/icons/ram.png" title="RAM / Storage Fault" description="Fix random reboots or SSD detection problems." />
-          <ServiceCard icon="/icons/fps.png" title="FPS Drop / Lag" description="Diagnose thermal throttling or bottlenecks." />
-          <ServiceCard icon="/icons/psu.png" title="PSU / Power Issue" description="Check SMPS, surge damage or faulty cables." />
-          <ServiceCard icon="/icons/liquidcooling.png" title="Liquid Cooling Issues" description="AIO not working? We replace or refill." />
-          <ServiceCard icon="/icons/rgb.png" title="RGB / Fan Issues" description="Configure ARGB sync or replace faulty headers." />
-          <ServiceCard icon="/icons/windows.png" title="Windows Crashes" description="Resolve blue screen errors, OS issues, drivers." />
-          <ServiceCard icon="/icons/cable.png" title="Cable Management" description="Neat internal routing & airflow enhancement." />
-        </div>
+       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+  <ServiceCard icon="/icons/gpu.png" title="GPU Not Detected" description="Fix GPU crashes, black screen, or PCIe slot issues." />
+  <ServiceCard icon="/icons/thermal.png" title="Overheating" description="Thermal repaste, cooler install & airflow correction." />
+  <ServiceCard icon="/icons/bootloop.png" title="PC Not Booting" description="Troubleshoot BIOS, power rails & POST errors." />
+  <ServiceCard icon="/icons/ram.png" title="RAM Upgrade / Fault" description="Upgrade RAM or fix detection, crash, and reboot issues." />
+  <ServiceCard icon="/icons/fps.png" title="FPS Drop / Lag" description="Diagnose thermal throttling or bottlenecks." />
+  <ServiceCard icon="/icons/psu.png" title="PSU / Power Issue" description="Check SMPS, surge damage or faulty cables." />
+  <ServiceCard icon="/icons/liquidcooling.png" title="Liquid Cooling Issues" description="AIO not working? We replace or refill." />
+  <ServiceCard icon="/icons/windows.png" title="Windows Crashes" description="Resolve blue screen errors, OS issues, drivers." />
+  <ServiceCard icon="/icons/ssd.png" title="Storage Upgrade" description="SSD / NVMe upgrade for faster boot and storage." />
+  <ServiceCard icon="/icons/bios.png" title="BIOS Recovery" description="Fix corrupted BIOS or perform safe firmware updates." />
+</div>
+
       </section>
 
       {/* About Section */}

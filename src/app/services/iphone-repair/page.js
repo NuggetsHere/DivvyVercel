@@ -55,17 +55,18 @@ export default function IPhoneRepairPage() {
       <section className="relative px-6 sm:px-12 py-20 max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-semibold mb-10">iPhone Repairs We Handle</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          <ServiceCard icon="/icons/iphone-screen.png" title="Screen Replacement" description="Fix cracked or unresponsive touch screens." />
-          <ServiceCard icon="/icons/iphone-battery.png" title="Battery Replacement" description="Quick battery swaps with original-grade parts." />
-          <ServiceCard icon="/icons/iphone-water.png" title="Water Damage Repair" description="Full cleaning and board-level repair for spills." />
-          <ServiceCard icon="/icons/iphone-camera.png" title="Camera Not Working" description="Front/back camera repair & lens replacement." />
-          <ServiceCard icon="/icons/iphone-speaker.png" title="Speaker / Mic Issues" description="Fix muffled audio, no sound, or mic not working." />
-          <ServiceCard icon="/icons/iphone-charging.png" title="Charging Port Fix" description="Repair slow charging or non-responsive ports." />
-          <ServiceCard icon="/icons/iphone-boot.png" title="Boot Loop / Logo Stuck" description="Restore system after update or software failure." />
-          <ServiceCard icon="/icons/iphone-button.png" title="Buttons Not Working" description="Fix power, volume, or home button issues." />
-          <ServiceCard icon="/icons/iphone-network.png" title="Network / SIM Issues" description="Solve ‘No Service’, SIM errors, and signal drops." />
-          <ServiceCard icon="/icons/iphone-data.png" title="Data Recovery" description="Recover files from dead or damaged iPhones." />
-        </div>
+  <ServiceCard icon="/icons/iphone-screen-new.png" title="Screen Replacement" description="Fix cracked or unresponsive touch screens." />
+  <ServiceCard icon="/icons/iphone-battery.png" title="Battery Replacement" description="Quick battery swaps with original-grade parts." />
+  <ServiceCard icon="/icons/iphone-water.png" title="Water Damage Repair" description="Full cleaning and board-level repair for spills." />
+  <ServiceCard icon="/icons/iphone-camera.png" title="Camera Not Working" description="Front/back camera repair & lens replacement." />
+  <ServiceCard icon="/icons/iphone-speaker.png" title="Speaker / Mic Issues" description="Fix muffled audio, no sound, or mic not working." />
+  <ServiceCard icon="/icons/iphone-charging.png" title="Charging Port Fix" description="Repair slow charging or non-responsive ports." />
+  <ServiceCard icon="/icons/iphone-boot.png" title="Boot Loop / Logo Stuck" description="Restore system after update or software failure." />
+  <ServiceCard icon="/icons/iphone-backglass.png" title="Back Glass Replacement" description="Fix cracked or shattered back glass panels." />
+  <ServiceCard icon="/icons/iphone-network.png" title="Network / SIM Issues" description="Solve ‘No Service’, SIM errors, and signal drops." />
+  <ServiceCard icon="/icons/iphone-data.png" title="Data Recovery" description="Recover files from dead or damaged iPhones." />
+</div>
+
       </section>
 
       {/* About Section */}
