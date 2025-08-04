@@ -1,4 +1,4 @@
-import {SignupFormDemo} from "../../components/form";
+import {SignupFormDemo} from "../components/form";
 import Script from "next/script";
 
 export const metadata = {
