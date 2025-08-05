@@ -81,7 +81,6 @@
 // }
 
 
-
 export const runtime = 'nodejs';
 
 import fs from 'fs';
@@ -93,7 +92,7 @@ import Blog from '@/models/Blog';
 const BASE_URL = 'https://divvycomputronix.com';
 const appDir = path.join(process.cwd(), 'src/app');
 
-// 🔍 Recursively collect static routes
+// 🔍 Auto-detect static routes
 function getStaticRoutes(dir = '') {
   const entries = fs.readdirSync(path.join(appDir, dir), { withFileTypes: true });
 
@@ -108,7 +107,6 @@ function getStaticRoutes(dir = '') {
     if (!isPage) return [];
 
     const route = '/' + dir.replace(/\/page\.(js|jsx)$/, '');
-
     const excluded =
       route.includes('[') || route.includes('blogpost') || route.includes('sitemap') || route.includes('robots');
 
@@ -119,12 +117,11 @@ function getStaticRoutes(dir = '') {
 }
 
 export async function GET() {
-  // ✅ Step 1: Get blog routes from MongoDB
   try {
     await connectMongoDB();
 
+    // 📝 1. Dynamic blog URLs
     const blogs = await Blog.find({}, 'slug date').lean();
-
     const blogPages = blogs.map((blog) => {
       const lastmod = blog.date ? new Date(blog.date).toISOString().split('T')[0] : undefined;
       return {
@@ -135,19 +132,39 @@ export async function GET() {
       };
     });
 
-    // ✅ Step 2: Auto-detect static pages from /src/app
+    // 📝 2. Static routes with enhanced SEO logic
     const staticPaths = getStaticRoutes();
+    const today = new Date().toISOString().split('T')[0];
 
-    const staticPages = staticPaths.map((loc) => ({
-      loc,
-      priority: loc === '/' ? 1.0 : 0.7,
-      changefreq: 'monthly',
-      lastmod: new Date().toISOString().split('T')[0],
-    }));
+    const staticPages = staticPaths.map((loc) => {
+      let priority = 0.7;
+      let changefreq = 'monthly';
 
+      if (loc === '/') {
+        priority = 1.0;
+        changefreq = 'daily';
+      } else if (loc === '/services') {
+        priority = 0.9;
+        changefreq = 'weekly';
+      } else if (loc.startsWith('/services/')) {
+        priority = 0.8;
+        changefreq = 'weekly';
+      } else if (loc === '/about' || loc === '/contact') {
+        priority = 0.6;
+        changefreq = 'monthly';
+      }
+
+      return {
+        loc,
+        priority,
+        changefreq,
+        lastmod: today,
+      };
+    });
+
+    // 📝 3. Generate sitemap XML
     const urls = [...staticPages, ...blogPages];
 
-    // ✅ Step 3: Generate XML
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
@@ -163,17 +180,15 @@ ${urls
   .join('')}
 </urlset>`;
 
-    // ✅ Step 4: Return response with caching
+    // ✅ 4. Serve sitemap with cache
     return new NextResponse(sitemap, {
       headers: {
         'Content-Type': 'application/xml',
         'Cache-Control': 's-maxage=3600, stale-while-revalidate',
       },
     });
-  } catch (error) {
-    console.error('❌ Sitemap generation error:', error);
-    return new NextResponse('Failed to generate sitemap', {
-      status: 500,
-    });
+  } catch (err) {
+    console.error('Sitemap generation error:', err);
+    return new NextResponse('Failed to generate sitemap', { status: 500 });
   }
 }
