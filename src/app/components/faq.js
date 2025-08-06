@@ -97,3 +97,6 @@ export function AccordionDemo() {
     </div>
   )
 }
+
+
+export default AccordionDemo;

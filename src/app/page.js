@@ -1,4 +1,4 @@
-
+import dynamic from 'next/dynamic';
 import React from "react";
 import Image from "next/image";
 import {
@@ -6,13 +6,25 @@ import {
   // Add more icons as needed
 } from "@tabler/icons-react";
 import Link from 'next/link'
-import Testimonials from "./components/Testimonials";
-import CallToAction from "./components/callToAction";
-import Features from "./components/Features";
-import VisitUsOffline from "./components/VistUsOffline";
-import { AccordionDemo } from "./components/faq";
-import { SignupFormDemo } from "./components/form";
-import { InfiniteMovingCardsDemo }from "./components/certifications";
+// import Testimonials from "./components/Testimonials";
+// import CallToAction from "./components/callToAction";
+// import Features from "./components/Features";
+// import VisitUsOffline from "./components/VistUsOffline";
+// import { AccordionDemo } from "./components/faq";
+// import { SignupFormDemo } from "./components/form";
+// import { InfiniteMovingCardsDemo }from "./components/certifications";
+
+import {
+  Testimonials,
+  CallToAction,
+  Features,
+  VisitUsOffline,
+  AccordionDemo,
+  SignupFormDemo,
+  InfiniteMovingCardsDemo,
+} from './components/lazycomp-landing.js';
+
+
 
 
 export const metadata = {
@@ -266,6 +278,7 @@ export default function Home() {
         width={500}
         height={500}
         priority
+        fetchPriority="high"
         className="rounded-2xl shadow-lg"
         sizes="(max-width: 1024px) 50vw, 500px"
       />
@@ -397,6 +410,7 @@ export default function Home() {
             className="rounded-t-xl object-cover"
             alt={product.seo}
             sizes="180px"
+            loading="lazy"
           />
         </div>
         <h2 className="my-2 text-center text-sm font-semibold px-2">

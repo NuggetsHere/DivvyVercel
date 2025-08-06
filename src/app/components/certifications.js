@@ -30,3 +30,6 @@ const testimonials = [
     link: "/certs/ISO-20000.pdf"
   }
 ];
+
+
+export default InfiniteMovingCardsDemo;
