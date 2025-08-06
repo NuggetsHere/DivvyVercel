@@ -16,17 +16,17 @@ export function InfiniteMovingCardsDemo() {
 const testimonials = [
   {
     name: "MSME-Certificate",
-    image: "/certs/msme.png",
+    image: "/certs/msme.webp",
     link: "/certs/ISO-9001.pdf" // or an external link
   },
   {
     name: "ISO-9001-Certificate",
-    image: "/certs/iso-cert.png",
+    image: "/certs/iso-cert.webp",
     link: "/certs/ISO-9001.pdf"
   },
   {
     name: "ISO-20000-Certificate",
-    image: "/certs/ISO-20000.png",
+    image: "/certs/ISO-20000.webp",
     link: "/certs/ISO-20000.pdf"
   }
 ];
