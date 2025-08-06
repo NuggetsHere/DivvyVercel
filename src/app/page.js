@@ -273,7 +273,7 @@ export default function Home() {
 
     <div className="hidden md:block">
       <Image
-        src="/hero-illustration.png"
+        src="/hero-illustration.webp"
         alt="Hero Illustration"
         width={500}
         height={500}
@@ -294,43 +294,43 @@ export default function Home() {
   {[
     {
       title: "MacBook Repair",
-      src: "macbook-repair.jpg",
+      src: "macbook-repair.webp",
       seo: "Screen replacements, logic board fixes, water damage MacBook repair",
       link: "/services/macbook-repair",
     },
     {
       title: "Laptop Repair",
-      src: "laptop-repair.jpg",
+      src: "laptop-repair.webp",
       seo: "Laptop diagnostics for all brands with 24hr repair service",
       link: "/services/laptop-repair",
     },
     {
       title: "iMac Repair",
-      src: "imac-repair.jpg",
+      src: "imac-repair.webp",
       seo: "Expert iMac servicing, SSD upgrades, GPU fixes in Nehru Place",
       link: "/services/imac-repair",
     },    
     {
       title: "iPhone Repair",
-      src: "phone-repair.jpg",
+      src: "phone-repair.webp",
       seo: "iPhone screen, battery and motherboard-level repair in Delhi",
       link: "/services/iphone-repair",
     },
     {
       title: "Gaming PC Repair",
-      src: "gaming-pc-repair.jpg",
+      src: "gaming-pc-repair.webp",
       seo: "Custom gaming PC repair including GPU and fan issues",
       link: "/services/gaming-pc-repair",
     },
     {
       title: "Mac Mini Repair",
-      src: "mac-mini-repair.jpg",
+      src: "mac-mini-repair.webp",
       seo: "Mac Mini SSD, RAM, logic board repair in Delhi",
       link: "/services/mac-mini-repair",
     },
     {
       title: "Surface Repair",
-      src: "surface-repair.jpeg",
+      src: "surface-repair.webp",
       seo: "Surface Pro screen, battery and motherboard repair",
       link: "/services/surface-repair",
     },
@@ -375,27 +375,27 @@ export default function Home() {
     {[
       {
         title: "MacBook",
-        src: "macbook.jpg",
+        src: "macbook.webp",
         seo: "Certified second-hand and refurbished MacBooks with warranty – MacBook Air, Pro, M1, M2 models in Delhi NCR",
       },
       {
         title: "Surface Devices",
-        src: "surface.jpg",
+        src: "surface.webp",
         seo: "Refurbished and second-hand Microsoft Surface Pro & Surface Laptop – tested and verified in Delhi",
       },
       {
         title: "Windows Laptops",
-        src: "windows-laptop.jpg",
+        src: "windows-laptop.webp",
         seo: "Second-hand Windows laptops from HP, Dell, Lenovo, Asus – tested, refurbished and warrantied",
       },
       {
         title: "iPhone",
-        src: "iphone.jpg",
+        src: "iphone.webp",
         seo: "Buy second-hand iPhones in Nehru Place – battery tested and certified with warranty",
       },
       {
         title: "iPad",
-        src: "ipad.jpg",
+        src: "ipad.webp",
         seo: "Second-hand iPads with verified battery and screen quality – iPad Air, Pro and Mini",
       },
     ].map((product, i) => (
@@ -485,7 +485,7 @@ export default function Home() {
       <div id="contactform">
         <div className="md:flex items-center justify-center md:gap-16 px-6 hidden">
           <Image
-            src="/broken-laptop.jpg"
+            src="/broken-laptop.webp"
             className="md:w-1/4 md:h-1/2 rounded-2xl h-1/2 w-full object-cover mb-10"
             alt="broken surface contact image"
             width={1000}
@@ -495,7 +495,7 @@ export default function Home() {
         </div>
         <div className="md:hidden flex items-center justify-center px-6 -mt-10">
           <Image
-            src="/broken-surface-sm.jpg"
+            src="/broken-surface-sm.webp"
             className="rounded-2xl h-1/2 w-full object-cover mb-10"
             alt="broken surface contact image"
             width={1000}
