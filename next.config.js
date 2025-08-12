@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: true, // Ensures faster builds & smaller JS
-  experimental: {
-    legacyBrowsers: false, // Avoids shipping unnecessary polyfills (IE11)
-  },
+
   images: {
     remotePatterns: [
       {
