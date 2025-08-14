@@ -3,16 +3,8 @@ import React from "react";
 import Image from "next/image";
 import {
   IconBrandAmazon,
-  // Add more icons as needed
 } from "@tabler/icons-react";
 import Link from 'next/link'
-// import Testimonials from "./components/Testimonials";
-// import CallToAction from "./components/callToAction";
-// import Features from "./components/Features";
-// import VisitUsOffline from "./components/VistUsOffline";
-// import { AccordionDemo } from "./components/faq";
-// import { SignupFormDemo } from "./components/form";
-// import { InfiniteMovingCardsDemo }from "./components/certifications";
 
 import {
   Testimonials,
@@ -92,6 +84,9 @@ export const metadata = {
     images: ['https://divvycomputronix.com/og-image.png'], // Same as OG image
   },
   metadataBase: new URL('https://divvycomputronix.com'), // Replace with your domain
+  alternates: {
+    canonical: '/', // Relative path
+  },
 };
 
 
