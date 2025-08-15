@@ -85,7 +85,7 @@ export const metadata = {
   },
   metadataBase: new URL('https://divvycomputronix.com'), // Replace with your domain
   alternates: {
-    canonical: '/', // Relative path
+    canonical: 'https://divvycomputronix.com', // Relative path
   },
 };
 
