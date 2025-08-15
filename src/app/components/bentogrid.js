@@ -92,6 +92,6 @@ const items = [
     className: "md:col-span-3 md:row-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     header: <Skeleton image="/services/device-servicing.jpg" alt="Device Maintenance/Device Servicing" />,
-    href: "/services/device-servicing",
+    href: "",
   },
 ];
