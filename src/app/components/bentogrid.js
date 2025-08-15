@@ -76,7 +76,7 @@ const items = [
     className: "md:col-span-1",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     header: <Skeleton image="/services/surface-repair.jpeg" alt="Microsoft Surface Repair" />,
-    href: "/services/microsoft-surface-repair",
+    href: "/services/surface-repair",
   },
   {
     title: <h2 className="text-xl font-semibold">Gaming PC Repair</h2>,
