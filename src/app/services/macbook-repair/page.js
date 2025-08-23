@@ -982,7 +982,7 @@ export default function MacBookRepairPage() {
       {/* Services */}
       <section className="relative px-6 sm:px-12 py-16 md:py-20 max-w-7xl mx-auto">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-8">Our Services</h2>
-<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <ServiceCard icon="/icons/motherboard-repair.png" title="Motherboard Repair" description="Repairs for all MacBook models: Air, Pro, Intel, and M-series." />
           <ServiceCard icon="/icons/screen-repair.png" title="Screen Flicker / Blackout" description="We fix Flexgate, black screens, and damaged displays." />
           <ServiceCard icon="/icons/power.png" title="MacBook Won't Turn On" description="Power, logic board, or charging circuit issues diagnosed." />
