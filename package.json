@@ -24,6 +24,7 @@
     "framer-motion": "^12.7.3",
     "html-react-parser": "^5.2.3",
     "jsdom": "^26.1.0",
+    "keen-slider": "^6.8.6",
     "lucide-react": "^0.484.0",
     "mini-svg-data-uri": "^1.4.4",
     "mongoose": "^8.14.1",
