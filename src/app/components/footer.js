@@ -148,7 +148,7 @@ export default function Footer() {
           />
           <p className="text-xl font-bold mb-1">Divvy Computronix</p>
           <p className="text-sm text-gray-700 mb-4">Your Tech Lifeline</p>
-          <Link href="tel:+919312247627">
+          <Link href="tel:+918810223137">
             <button
               type="button"
               className="flex justify-center gap-2 items-center text-sm bg-gray-50 backdrop-blur-md font-semibold border border-gray-50 
