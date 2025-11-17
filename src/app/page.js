@@ -254,7 +254,7 @@ export default function Home() {
       </h2>
 <Link href="/contact">
 <button className="button1">
-   REPAIR NOW!  
+   GET A FREE QUOTE!  
   <svg fill="currentColor" viewBox="0 0 24 24" className="icon1">
     <path
       clipRule="evenodd"
