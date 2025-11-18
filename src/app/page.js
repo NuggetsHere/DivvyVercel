@@ -230,7 +230,7 @@ export default function Home() {
             })
           }}
         />
-    <div className="flex flex-col items-center text-shadow-none w-full overflow-x-hidden">
+<div className="flex flex-col items-center text-shadow-none w-full overflow-visible">
       
     <section
   id="hero"
@@ -447,12 +447,12 @@ export default function Home() {
       >
         <h2 className="text-4xl font-bold px-10">Why choose Divvy Computronix?</h2>
         <Features />
-      </div>
+      </div >
 
       {/* Certifications Section */}
-
+<div className="will-change-transform">
       <InfiniteMovingCardsDemo />
-
+</div>
       {/* Testimonials Section */}
       <div
         id="testimonials"
