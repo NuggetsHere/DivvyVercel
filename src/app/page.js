@@ -252,7 +252,7 @@ export default function Home() {
         motherboards, graphic card failures, and non-booting PCs, we’ve
         seen (and fixed) it all.
       </h2>
-<Link href="/tel:+919312247627">
+<Link href="tel:+919312247627">
 <button className="button1">
    GET A FREE QUOTE!  
   <svg fill="currentColor" viewBox="0 0 24 24" className="icon1">
