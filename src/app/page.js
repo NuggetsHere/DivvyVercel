@@ -230,7 +230,7 @@ export default function Home() {
             })
           }}
         />
-<div className="flex flex-col items-center text-shadow-none w-full overflow-visible">
+    <div className="flex flex-col items-center text-shadow-none w-full overflow-x-hidden">
       
     <section
   id="hero"
@@ -252,8 +252,8 @@ export default function Home() {
         motherboards, graphic card failures, and non-booting PCs, we’ve
         seen (and fixed) it all.
       </h2>
-<Link href="tel:+919312247627">
-<button className="button1" >
+<Link href="/tel:+919312247627">
+<button className="button1">
    GET A FREE QUOTE!  
   <svg fill="currentColor" viewBox="0 0 24 24" className="icon1">
     <path
@@ -447,12 +447,12 @@ export default function Home() {
       >
         <h2 className="text-4xl font-bold px-10">Why choose Divvy Computronix?</h2>
         <Features />
-      </div >
+      </div>
 
       {/* Certifications Section */}
-<div className="will-change-transform">
+
       <InfiniteMovingCardsDemo />
-</div>
+
       {/* Testimonials Section */}
       <div
         id="testimonials"
