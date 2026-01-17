@@ -80,7 +80,6 @@
 //   });
 // }
 
-
 export const runtime = 'nodejs';
 
 import fs from 'fs';
@@ -88,7 +87,6 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 import connectMongoDB from '@/lib/mongodb';
 import Blog from '@/models/Blog';
-export const dynamic = 'force-dynamic';
 
 const BASE_URL = 'https://divvycomputronix.com';
 const appDir = path.join(process.cwd(), 'src/app');
