@@ -523,8 +523,11 @@ export default function Home() {
           
 </div>
       {/* Final CTA + Visit Us Offline */}
-      <div className="bg-[#0F162B] rounded-3xl">
-        <CallToAction />
+      <div className="bg-[#0F162B] rounded-3xl hidden md:block">
+        <CallToAction className=""/>
+        
+      </div>
+      <div>
         <VisitUsOffline />
       </div>
     </div>
