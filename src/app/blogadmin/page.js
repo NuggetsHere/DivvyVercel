@@ -12,6 +12,8 @@ export default function AdminPage() {
     authorImage: '',
     authorBio: '',
     date: '',
+    Metatitle: '',
+    Metadescription: '',
   });
 
   const handleChange = (e) =>
@@ -99,6 +101,22 @@ export default function AdminPage() {
           name="content"
           placeholder="Full content"
           value={form.content}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+          required
+        />
+        <input
+          name="Metatitle"
+          placeholder="Meta-Title"
+          value={form.title}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+          required
+        />
+        <textarea
+          name="Metadescription"
+          placeholder="MetaDescription"
+          value={form.description}
           onChange={handleChange}
           className="w-full p-2 border rounded"
           required
