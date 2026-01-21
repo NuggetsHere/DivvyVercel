@@ -15,8 +15,8 @@ export async function generateMetadata(props) {
   if (!blog || !blog.seo) return {};
 
   return {
-    title: blog.seo.metaTitle,
-    description: blog.seo.metaDescription,
+    title: blog.title,
+    description: blog.description,
   };
 }
 
