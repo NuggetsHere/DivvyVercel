@@ -48,7 +48,7 @@ export default async function BlogsPage() {
         <h1 className="text-3xl md:text-5xl font-bold mb-8 text-black text-center">Our Latest Blogs</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog) => (
-            <Link key={blog._id} href={`/blogpost/${blog.slug}`}>
+            <Link key={blog._id} href={`/blogs/${blog.slug}`}>
               <div className="group rounded-lg overflow-hidden shadow hover:shadow-xl transition duration-300 border border-gray-200">
                 {blog.image && (
                   <div className="relative h-52 w-full">
