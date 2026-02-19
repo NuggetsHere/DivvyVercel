@@ -1,6 +1,8 @@
+// src/app/layout.js
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import AuthProvider from "./components/Authprovider"; 
 import WhatsAppButton from "./components/button";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={nebulica.className}>
       <body>
+        <AuthProvider>
         <Analytics mode="production" />
         <SpeedInsights />
         <div className="h-full w-full">
@@ -32,6 +35,7 @@ export default function RootLayout({ children }) {
         <div>
           <Footer />
         </div>
+        </AuthProvider>
       </body>
     </html>
   );
