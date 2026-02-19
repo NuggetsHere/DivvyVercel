@@ -16,28 +16,28 @@ export default function MacbookRepair() {
     // Featured products for sale (policy-compliant)
     const featuredProducts = [
         {
-            title: "MacBook Pro 14\" M2",
-            description: "Refurbished, 16GB RAM, 512GB SSD, 1-year warranty",
-            price: "₹1,199",
-            originalPrice: "₹1,499",
+            title: "MacBook Prom 2020\" M1",
+            description: "Refurbished, 8GB RAM, 256GB SSD, Upto 1-year warranty",
+            price: "₹45,999",
+            originalPrice: "₹1,22,900",
             image: "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?q=80&w=1000&auto=format&fit=crop",
-            badge: "Best Seller"
+            
         },
         {
             title: "MacBook Air M2",
-            description: "Brand new, 8GB RAM, 256GB SSD, with AppleCare+",
-            price: "₹999",
-            originalPrice: "₹1,199",
+            description: "Refurbished, 8GB RAM, 256GB SSD, Upto 1-year warranty",
+            price: "₹46,999",
+            originalPrice: "₹72,300",
             image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=1000&auto=format&fit=crop",
-            badge: "New Arrival"
+            
         },
         {
-            title: "MacBook Pro 16\" M3 Max",
-            description: "Refurbished, 32GB RAM, 1TB SSD, 90-day warranty",
-            price: "₹2,299",
-            originalPrice: "₹2,999",
-            image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop",
-            badge: "Premium"
+            title: "Mac Mini (M1) 2020",
+            description: "Refurbished, 8GB RAM, 256GB SSD, 90-day warranty",
+            price: "₹28,999",
+            originalPrice: "₹75,000",
+            image: "https://images.unsplash.com/photo-1735810501831-40892dcfef1e?q=80&w=1540&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            
         }
     ];
 
@@ -46,21 +46,42 @@ export default function MacbookRepair() {
         {
             title: "MacBook Screen Replacement",
             description: "Original Retina display installation with 90-day warranty",
-            price: "₹299",
+            price: "₹4999",
             duration: "Same-day service",
             icon: <IconDeviceLaptop className="w-8 h-8 text-blue-500" />
         },
         {
             title: "Battery Replacement",
-            description: "Genuine Apple battery with calibration and 1-year warranty",
-            price: "₹149",
+            description: "Apple battery with calibration and 1-year warranty",
+            price: "₹1999",
             duration: "2-hour turnaround",
             icon: <IconClock className="w-8 h-8 text-blue-500" />
         },
         {
             title: "Liquid Damage Repair",
             description: "Professional cleaning and component replacement",
-            price: "₹199",
+            price: "₹2499",
+            duration: "Diagnostic first",
+            icon: <IconShieldCheck className="w-8 h-8 text-blue-500" />
+        },
+        {
+            title: "Trackpad Replacement",
+            description: "Professional cleaning and component replacement",
+            price: "₹1999",
+            duration: "Diagnostic first",
+            icon: <IconShieldCheck className="w-8 h-8 text-blue-500" />
+        },
+        {
+            title: "Flexgate Repair",
+            description: "Professional cleaning and component replacement",
+            price: "₹3999",
+            duration: "Diagnostic first",
+            icon: <IconShieldCheck className="w-8 h-8 text-blue-500" />
+        },
+        {
+            title: "Charging port replacement",
+            description: "Professional cleaning and component replacement",
+            price: "₹1999",
             duration: "Diagnostic first",
             icon: <IconShieldCheck className="w-8 h-8 text-blue-500" />
         }
@@ -230,7 +251,7 @@ export default function MacbookRepair() {
                             <span className="text-sm text-gray-400 uppercase">Genuine Parts</span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <span className="text-3xl font-bold text-gray-800">1-Year</span>
+                            <span className="text-3xl font-bold text-gray-800">Up to 1-Year</span>
                             <span className="text-sm text-gray-400 uppercase">Warranty on Products</span>
                         </div>
                     </div>
@@ -279,11 +300,16 @@ export default function MacbookRepair() {
                             </motion.div>
                         ))}
                     </motion.div>
+                    <div className="p-8 flex flex-row gap-4 w-full items-center text-center justify-center" >
+                        Note: 
+                            Prices may vary depending on device. 
+                            Warranties depend on nature of repair.
+                    </div>
                 </div>
             </section>
 
             {/* Products Section (Secondary - Policy Compliant) */}
-            <section id="products" className="py-24 w-full bg-gray-50 section bg-white">
+            <section id="products" className="pb-24 w-full bg-gray-50 section bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -309,11 +335,7 @@ export default function MacbookRepair() {
                                 whileHover={{ y: -10 }}
                                 className="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300"
                             >
-                                {product.badge && (
-                                    <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
-                                        {product.badge}
-                                    </div>
-                                )}
+                                
                                 <div className="relative h-64 bg-gray-50 overflow-hidden">
                                     <Image
                                         src={product.image}
