@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 const handler = NextAuth({
     session: {
     strategy: "jwt",
-    maxAge: 1 * 60 * 5 , // 1 hour (in seconds)
+    maxAge: 1 * 60 * 5 , // (in seconds)
     updateAge: 0,        // Update the timer on every single request
   },
   providers: [

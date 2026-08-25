@@ -1,12 +1,16 @@
 'use client';
 import { signIn } from 'next-auth/react';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
-export default function LoginPage() {
+function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Reads the original target page, or falls back to /blogadmin
+  const callbackUrl = searchParams.get('callbackUrl') || '/blogadmin';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,8 +20,12 @@ export default function LoginPage() {
       redirect: false,
     });
 
-    if (res.ok) router.push('/blogadmin');
-    else alert("Invalid Credentials");
+    if (res.ok) {
+      router.push(callbackUrl); // Redirects to whichever page was requested
+      router.refresh();
+    } else {
+      alert("Invalid Credentials");
+    }
   };
 
   return (
@@ -28,15 +36,28 @@ export default function LoginPage() {
           className="w-full p-2 mb-4 border rounded" 
           placeholder="Username" 
           onChange={e => setUsername(e.target.value)} 
+          required
         />
         <input 
           className="w-full p-2 mb-4 border rounded" 
           type="password" 
           placeholder="Password" 
           onChange={e => setPassword(e.target.value)} 
+          required
         />
-        <button className="w-full bg-black text-white p-2 rounded">Login</button>
+        <button type="submit" className="w-full bg-black text-white p-2 rounded">
+          Login
+        </button>
       </form>
     </div>
+  );
+}
+
+// Next.js requires useSearchParams to be wrapped in a Suspense boundary
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<p className="p-4 text-center">Loading login form...</p>}>
+      <LoginForm />
+    </Suspense>
   );
 }

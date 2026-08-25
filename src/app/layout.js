@@ -6,7 +6,12 @@ import AuthProvider from "./components/Authprovider";
 import WhatsAppButton from "./components/button";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import nebulica from '/public/fonts/nebulica-regular';
+import localFont from 'next/font/local'
+const nebulica = localFont({
+  src: './fonts/Nebulica-Regular.otf',
+  variable: '--font-nebulica',
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Divvy Computronix",

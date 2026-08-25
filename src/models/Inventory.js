@@ -1,15 +1,21 @@
 import mongoose from 'mongoose';
 
 const InventorySchema = new mongoose.Schema({
-  customerName: { type: String, required: [true, 'Customer name is required'] },
-  customerNumber: { type: String, required: [true, 'Customer phone number is required'] },
-  issue: { type: String, required: [true, 'Device issue details are required'] },
-  model: { type: String, required: [true, 'Device model is required'] },
-  ram: { type: String, required: [true, 'RAM specifications are required'] },
-  ssd: { type: String, required: [true, 'SSD/Storage capacity is required'] },
-  serialNumber: { type: String, required: [true, 'Device serial number is required'] },
-  assetTag: { type: String, required: [true, 'Asset tag is required'], unique: true }, // New dynamic tag field
-  qrCodeImage: { type: String, required: [true, 'QR Code image string is required'] },
+  customerName: { type: String, default: '' },
+  customerNumber: { type: String, default: '' },
+  deviceType: { type: String, required: true },
+  partType: { type: String, default: '' },
+  processor: { type: String, default: '' },
+  issue: { type: String, required: true },
+  model: { type: String, required: true },
+  ram: { type: String, default: '' },
+  ssd: { type: String, default: '' },
+  serialNumber: { type: String, required: true },
+  assetTag: { type: String, required: true, unique: true },
+  isForSale: { type: Boolean, default: false },
+  salePrice: { type: String, default: '' },
+  qrCodeImage: { type: String, required: true },
+  status: { type: String, enum: ['IN', 'OUT'], default: 'IN' },
   createdAt: { type: Date, default: Date.now }
 }, { 
   collection: 'inventory' 

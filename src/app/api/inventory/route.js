@@ -1,3 +1,93 @@
+// //src/app/api/inventory/route.js
+
+// import { NextResponse } from 'next/server';
+// import dbConnect from '@/lib/mongodb';
+// import Inventory from '@/models/Inventory';
+
+// export async function POST(request) {
+//   try {
+//     await dbConnect();
+//     const body = await request.json();
+//     const { 
+//       customerName, 
+//       customerNumber, 
+//       deviceType, 
+//       partType, 
+//       issue, 
+//       model, 
+//       processor, 
+//       ram, 
+//       ssd, 
+//       serialNumber, 
+//       assetTag, 
+//       isForSale, 
+//       salePrice, 
+//       qrCodeImage 
+//     } = body;
+
+//     // Hardware parameters required for DB registration
+//     if (!deviceType || !model || !serialNumber || !assetTag || !qrCodeImage || !issue) {
+//       return NextResponse.json({ success: false, error: 'Missing required hardware parameters.' }, { status: 400 });
+//     }
+
+//     if (deviceType === 'Parts' && !partType) {
+//       return NextResponse.json({ success: false, error: 'Part specification is required for Parts.' }, { status: 400 });
+//     }
+
+//     const savedRecord = await Inventory.create({
+//       customerName: customerName || '',
+//       customerNumber: customerNumber || '',
+//       deviceType,
+//       partType: deviceType === 'Parts' ? partType : '',
+//       issue,
+//       model,
+//       processor: processor || '',
+//       ram: ram || '',
+//       ssd: ssd || '',
+//       serialNumber,
+//       assetTag,
+//       isForSale: Boolean(isForSale),
+//       salePrice: isForSale ? salePrice : '',
+//       qrCodeImage,
+//       status: 'IN'
+//     });
+
+//     return NextResponse.json({ success: true, data: savedRecord }, { status: 201 });
+//   } catch (error) {
+//     console.error('Inventory Save Error:', error);
+//     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+//   }
+// }
+
+// export async function GET(request) {
+//   try {
+//     await dbConnect();
+//     const { searchParams } = new URL(request.url);
+//     const query = searchParams.get('query');
+
+//     if (!query) {
+//       return NextResponse.json({ success: false, error: 'Search query required.' }, { status: 400 });
+//     }
+
+//     const asset = await Inventory.findOne({
+//       $or: [
+//         { assetTag: query.trim() },
+//         { serialNumber: query.trim() }
+//       ]
+//     });
+
+//     if (!asset) {
+//       return NextResponse.json({ success: false, error: 'Asset not found in database.' }, { status: 404 });
+//     }
+
+//     return NextResponse.json({ success: true, data: asset });
+//   } catch (error) {
+//     console.error('Inventory Fetch Error:', error);
+//     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+//   }
+// }
+
+
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import Inventory from '@/models/Inventory';
@@ -5,36 +95,118 @@ import Inventory from '@/models/Inventory';
 export async function POST(request) {
   try {
     await dbConnect();
-    
     const body = await request.json();
-    const { customerName, customerNumber, issue, model, ram, ssd, serialNumber, assetTag, qrCodeImage } = body;
+    const { 
+      customerName, 
+      customerNumber, 
+      deviceType, 
+      partType, 
+      issue, 
+      model, 
+      processor, 
+      ram, 
+      ssd, 
+      serialNumber, 
+      assetTag, 
+      isForSale, 
+      salePrice, 
+      qrCodeImage 
+    } = body;
 
-    if (!customerName || !customerNumber || !issue || !model || !ram || !ssd || !serialNumber || !assetTag || !qrCodeImage) {
-      return NextResponse.json({ success: false, error: 'Missing required parameters.' }, { status: 400 });
+    // Hardware parameters required for DB registration
+    if (!deviceType || !model || !serialNumber || !assetTag || !qrCodeImage || !issue) {
+      return NextResponse.json({ success: false, error: 'Missing required hardware parameters.' }, { status: 400 });
     }
 
-    // Double check that asset tag doesn't collide
-    const existingAsset = await Inventory.findOne({ assetTag });
-    if (existingAsset) {
-      return NextResponse.json({ success: false, error: 'Generated Asset Tag already exists.' }, { status: 400 });
+    if (deviceType === 'Parts' && !partType) {
+      return NextResponse.json({ success: false, error: 'Part specification is required for Parts.' }, { status: 400 });
     }
 
     const savedRecord = await Inventory.create({
-      customerName,
-      customerNumber,
+      customerName: customerName || '',
+      customerNumber: customerNumber || '',
+      deviceType,
+      partType: deviceType === 'Parts' ? partType : '',
       issue,
       model,
-      ram,
-      ssd,
+      processor: processor || '',
+      ram: ram || '',
+      ssd: ssd || '',
       serialNumber,
       assetTag,
-      qrCodeImage
+      isForSale: Boolean(isForSale),
+      salePrice: isForSale ? salePrice : '',
+      qrCodeImage,
+      status: 'IN'
     });
 
     return NextResponse.json({ success: true, data: savedRecord }, { status: 201 });
-
   } catch (error) {
     console.error('Inventory Save Error:', error);
-    return NextResponse.json({ success: false, error: error.message || 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}
+
+export async function GET(request) {
+  try {
+    await dbConnect();
+    const { searchParams } = new URL(request.url);
+    const query = searchParams.get('query');
+
+    if (!query) {
+      return NextResponse.json({ success: false, error: 'Search query required.' }, { status: 400 });
+    }
+
+    const asset = await Inventory.findOne({
+      $or: [
+        { assetTag: query.trim() },
+        { serialNumber: query.trim() }
+      ]
+    });
+
+    if (!asset) {
+      return NextResponse.json({ success: false, error: 'Asset not found in database.' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, data: asset });
+  } catch (error) {
+    console.error('Inventory Fetch Error:', error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}
+
+export async function PUT(request) {
+  try {
+    await dbConnect();
+    const body = await request.json();
+    const { assetTag, action } = body;
+
+    if (!assetTag) {
+      return NextResponse.json({ success: false, error: 'Asset tag is required.' }, { status: 400 });
+    }
+
+    const asset = await Inventory.findOne({ assetTag: assetTag.trim() });
+    if (!asset) {
+      return NextResponse.json({ success: false, error: 'Asset not found in database.' }, { status: 404 });
+    }
+
+    // Toggle or explicitly set status based on action
+    if (action === 'OUT') {
+      asset.status = 'OUT';
+      await asset.save();
+      return NextResponse.json({ success: true, message: `Asset ${assetTag} marked as OUT.`, data: asset });
+    }
+
+    if (action === 'IN') {
+      asset.status = 'IN';
+      await asset.save();
+      return NextResponse.json({ success: true, message: `Asset ${assetTag} marked as IN.`, data: asset });
+    }
+
+    // Default action: Returns the current asset state
+    return NextResponse.json({ success: true, data: asset });
+  } catch (error) {
+    console.error('Inventory Update Error:', error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
