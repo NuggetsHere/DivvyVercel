@@ -1,3 +1,4 @@
+//src/models/Inventory.js
 import mongoose from 'mongoose';
 
 const InventorySchema = new mongoose.Schema({
@@ -15,7 +16,18 @@ const InventorySchema = new mongoose.Schema({
   isForSale: { type: Boolean, default: false },
   salePrice: { type: String, default: '' },
   qrCodeImage: { type: String, required: true },
-  status: { type: String, enum: ['IN', 'OUT'], default: 'IN' },
+  status: { 
+    type: String, 
+    enum: ['IN', 'OUT'], 
+    default: 'IN' 
+  },
+  outReason: { 
+    type: String, 
+    enum: ['SOLD', 'THIRD_PARTY', ''], 
+    default: '' 
+  },
+  thirdPartyName: { type: String, default: '' },
+  outDate: { type: Date, default: null }, // Timestamp when asset leaves the shop
   createdAt: { type: Date, default: Date.now }
 }, { 
   collection: 'inventory' 
