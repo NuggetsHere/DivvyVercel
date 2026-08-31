@@ -23,7 +23,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports =  {allowedDevOrigins: ['192.168.1.64']}; withBundleAnalyzer(nextConfig);
 
 
 
