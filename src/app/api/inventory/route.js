@@ -24,7 +24,7 @@ export async function POST(request) {
       qrCodeImage 
     } = body;
 
-    if (!deviceType || !model || !serialNumber || !assetTag || !qrCodeImage || !issue) {
+    if (!deviceType || !model || !serialNumber || !assetTag || !qrCodeImage) {
       return NextResponse.json({ success: false, error: 'Missing required hardware parameters.' }, { status: 400 });
     }
 
@@ -37,7 +37,7 @@ export async function POST(request) {
       customerNumber: customerNumber || '',
       deviceType,
       partType: deviceType === 'Parts' ? partType : '',
-      issue,
+      issue : issue || '',
       model,
       processor: processor || '',
       ram: ram || '',

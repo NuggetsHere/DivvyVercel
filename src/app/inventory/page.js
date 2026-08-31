@@ -1,3 +1,4 @@
+//src/app/inventory/page.js
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -118,8 +119,8 @@ export default function InventoryStickerPage() {
   };
 
   const handleSaveAndPrint = async (targetStickerType) => {
-    if (!formData.deviceType || !formData.model || !formData.serialNumber || !formData.issue) {
-      setStatusMessage({ type: 'error', text: 'Device Type, Model, S/N, and Fault are required.' });
+    if (!formData.deviceType || !formData.model || !formData.serialNumber) {
+      setStatusMessage({ type: 'error', text: 'Device Type, Model, and S/N are required.' });
       return;
     }
     if (formData.deviceType === 'Parts' && !formData.partType) {
@@ -203,7 +204,9 @@ export default function InventoryStickerPage() {
     : formData.deviceType || '—';
 
   const cpuLine = formData.processor || '—';
-  const memoryLine = [formData.ram, formData.ssd].filter(Boolean).join('  ·  ') || '—';
+  const ramGB = formData.ram ? `${formData.ram.replace(/gb$/i, '')}GB` : '';
+  const ssdGB = formData.ssd ? `${formData.ssd.replace(/gb$/i, '')}GB` : '';
+  const memoryLine = [ramGB, ssdGB].filter(Boolean).join(' · ') || '—';
 
   return (
     <div className="page-wrap min-h-screen bg-slate-50 text-slate-800 p-6 md:p-12">
@@ -370,7 +373,7 @@ export default function InventoryStickerPage() {
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Reported Symptoms / Failures</label>
-              <textarea name="issue" value={formData.issue} onChange={handleInputChange} rows="3" required maxLength={30} className="w-full text-sm px-3 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none resize-none" placeholder="Describe faults..."></textarea>
+              <textarea name="issue" value={formData.issue} onChange={handleInputChange} rows="3" maxLength={30} className="w-full text-sm px-3 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none resize-none" placeholder="Describe faults..."></textarea>
               <p className="text-[11px] text-slate-500 mt-1">Fault prints on one line — anything past ~27 characters is cut with an ellipsis.</p>
             </div>
 

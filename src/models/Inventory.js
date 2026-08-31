@@ -7,7 +7,7 @@ const InventorySchema = new mongoose.Schema({
   deviceType: { type: String, required: true },
   partType: { type: String, default: '' },
   processor: { type: String, default: '' },
-  issue: { type: String, required: true },
+  issue: { type: String, required: false },
   model: { type: String, required: true },
   ram: { type: String, default: '' },
   ssd: { type: String, default: '' },
