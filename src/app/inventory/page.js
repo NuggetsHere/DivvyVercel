@@ -826,14 +826,12 @@
 // }
 
 
-//src/app/inventory/page.js
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { QRCodeCanvas } from 'qrcode.react';
 import { toPng } from 'html-to-image';
-import SerialScanner from '@/app/components/SerialScanner';
-console.log('SerialScanner import:', SerialScanner);
+
 /**
  * Font scaling for a 203 DPI thermal label.
  *
@@ -862,7 +860,8 @@ const EMPTY_FORM = {
   serialNumber: '',
   assetTag: '',
   isForSale: false,
-  salePrice: '',
+  minSalePrice: '',
+  maxSalePrice: '',
 };
 
 export default function InventoryStickerPage() {
@@ -871,10 +870,6 @@ export default function InventoryStickerPage() {
   const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
   const [isReprintMode, setIsReprintMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-
-  // Serial number OCR scanner state
-  const [showScanner, setShowScanner] = useState(false);
-  const [serialUnconfirmed, setSerialUnconfirmed] = useState(false);
 
   const inventoryLabelRef = useRef(null);
   const customerLabelRef = useRef(null);
@@ -896,35 +891,16 @@ export default function InventoryStickerPage() {
     const { name, value, type, checked } = e.target;
 
     if (type === 'checkbox') {
-      setFormData((prev) => ({ ...prev, [name]: checked, salePrice: checked ? prev.salePrice : '' }));
+      setFormData((prev) => ({ 
+        ...prev, 
+        [name]: checked, 
+        minSalePrice: checked ? prev.minSalePrice : '',
+        maxSalePrice: checked ? prev.maxSalePrice : '' 
+      }));
     } else if (name === 'deviceType' && value !== 'Parts') {
       setFormData((prev) => ({ ...prev, deviceType: value, partType: '' }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
-    }
-  };
-
-  // Called when the user manually edits the serial number field.
-  // A manual edit counts as the user having confirmed/corrected the value,
-  // so we clear the "unconfirmed scan" flag.
-  const handleSerialInputChange = (e) => {
-    handleInputChange(e);
-    setSerialUnconfirmed(false);
-  };
-
-  // Called by SerialScanner once OCR has run on a captured frame.
-  const handleScanResult = ({ value, confidence, plausible }) => {
-    setFormData((prev) => ({ ...prev, serialNumber: value }));
-    setSerialUnconfirmed(true);
-    setShowScanner(false);
-
-    if (!plausible || confidence < 60) {
-      setStatusMessage({
-        type: 'error',
-        text: `Low-confidence scan ("${value}") — please check it against the device before printing.`,
-      });
-    } else {
-      setStatusMessage({ type: 'success', text: `Scanned: ${value} — please verify before printing.` });
     }
   };
 
@@ -954,10 +930,10 @@ export default function InventoryStickerPage() {
           serialNumber: item.serialNumber || '',
           assetTag: item.assetTag || '',
           isForSale: item.isForSale || false,
-          salePrice: item.salePrice || '',
+          minSalePrice: item.minSalePrice || '',
+          maxSalePrice: item.maxSalePrice || '',
         });
         setIsReprintMode(true);
-        setSerialUnconfirmed(false);
         setStatusMessage({ type: 'success', text: `Loaded tag: ${item.assetTag} (Re-print mode active)` });
       } else {
         setStatusMessage({ type: 'error', text: result.error || 'No matching asset found.' });
@@ -973,7 +949,6 @@ export default function InventoryStickerPage() {
     setIsReprintMode(false);
     setSearchQuery('');
     setStatusMessage({ type: '', text: '' });
-    setSerialUnconfirmed(false);
     setFormData({ ...EMPTY_FORM, assetTag: generateAssetTag() });
   };
 
@@ -990,16 +965,12 @@ export default function InventoryStickerPage() {
       setStatusMessage({ type: 'error', text: 'Processor, RAM and storage are required for laptops.' });
       return;
     }
-    if (formData.isForSale && !formData.salePrice) {
-      setStatusMessage({ type: 'error', text: 'Enter a sale price.' });
+    if (formData.isForSale && (!formData.minSalePrice || !formData.maxSalePrice)) {
+      setStatusMessage({ type: 'error', text: 'Enter both minimum and maximum sale prices.' });
       return;
     }
     if (targetStickerType === 'customer' && (!formData.customerName.trim() || !formData.customerNumber.trim())) {
       setStatusMessage({ type: 'error', text: 'Customer Name and Contact Number are required for Customer Labels.' });
-      return;
-    }
-    if (serialUnconfirmed) {
-      setStatusMessage({ type: 'error', text: 'Please verify the scanned serial number before printing.' });
       return;
     }
 
@@ -1013,7 +984,7 @@ export default function InventoryStickerPage() {
         cacheBust: true,
         width: 480,
         height: 320,
-        pixelRatio: 1, // 1 CSS px === 1 printer dot at 203 DPI
+        pixelRatio: 1,
         backgroundColor: '#ffffff',
         style: {
           transform: 'none',
@@ -1047,7 +1018,6 @@ export default function InventoryStickerPage() {
       if (printOutcome.success) {
         setStatusMessage({ type: 'success', text: `Asset ${formData.assetTag} sent to printer!` });
         if (!isReprintMode) {
-          setSerialUnconfirmed(false);
           setFormData({ ...EMPTY_FORM, assetTag: generateAssetTag() });
         }
       } else {
@@ -1192,17 +1162,31 @@ export default function InventoryStickerPage() {
               </div>
 
               {formData.isForSale && (
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Sale Price (₹)</label>
-                  <input
-                    type="number"
-                    name="salePrice"
-                    value={formData.salePrice}
-                    onChange={handleInputChange}
-                    required={formData.isForSale}
-                    className="w-full text-sm px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
-                    placeholder="e.g. 45000"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Min Sale Price (₹)</label>
+                    <input
+                      type="number"
+                      name="minSalePrice"
+                      value={formData.minSalePrice}
+                      onChange={handleInputChange}
+                      required={formData.isForSale}
+                      className="w-full text-sm px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
+                      placeholder="e.g. 40000"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Max Sale Price (₹)</label>
+                    <input
+                      type="number"
+                      name="maxSalePrice"
+                      value={formData.maxSalePrice}
+                      onChange={handleInputChange}
+                      required={formData.isForSale}
+                      className="w-full text-sm px-3 py-2.5 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
+                      placeholder="e.g. 45000"
+                    />
+                  </div>
                 </div>
               )}
             </div>
@@ -1232,33 +1216,7 @@ export default function InventoryStickerPage() {
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Serial Number (S/N)</label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  name="serialNumber"
-                  value={formData.serialNumber}
-                  onChange={handleSerialInputChange}
-                  required
-                  className={`flex-1 text-sm px-3 py-2.5 border rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none ${
-                    serialUnconfirmed
-                      ? 'bg-amber-50 border-amber-400'
-                      : 'bg-slate-50 border-slate-300 focus:bg-white'
-                  }`}
-                  placeholder="e.g. C02XL198HF21"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowScanner(true)}
-                  className="bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-all active:scale-[0.99]"
-                >
-                  Scan
-                </button>
-              </div>
-              {serialUnconfirmed && (
-                <p className="text-[11px] text-amber-700 mt-1 font-medium">
-                  Scanned value — please verify it matches the device before printing.
-                </p>
-              )}
+              <input type="text" name="serialNumber" value={formData.serialNumber} onChange={handleInputChange} required className="w-full text-sm px-3 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none" placeholder="e.g. C02XL198HF21" />
             </div>
 
             <div>
@@ -1348,8 +1306,8 @@ export default function InventoryStickerPage() {
               <div className="lbl-foot lbl-foot-inv">
                 <span className="lbl-foot-name">{formData.customerName || '—'}</span>
                 <span className="lbl-foot-right">
-                  {formData.isForSale && formData.salePrice && (
-                    <span className="lbl-price"><span className="lbl-rupee">₹</span>{Number(formData.salePrice).toLocaleString('en-IN')}</span>
+                  {formData.isForSale && formData.maxSalePrice && (
+                    <span className="lbl-price"><span className="lbl-rupee">₹</span>{Number(formData.maxSalePrice).toLocaleString('en-IN')}</span>
                   )}
                   <span>{currentDateString}</span>
                 </span>
@@ -1416,45 +1374,12 @@ export default function InventoryStickerPage() {
 
       </div>
 
-      {showScanner && (
-        <SerialScanner onCapture={handleScanResult} onClose={() => setShowScanner(false)} />
-      )}
-
       <style jsx global>{`
-        /* ==================================================================
-           203 DPI THERMAL LABEL — 1 CSS px === 1 printer dot === 0.125 mm
-
-           Layout is UNCHANGED from the original design. Only type sizes,
-           colours and internal spacing were retuned so the glyphs survive
-           the spooler's 1-bit threshold.
-
-           RULES — do not break these when editing:
-           1. No lowercase copy below 24px. 24px = 8.5pt = the point where an
-              'e' counter is still ~2 dots wide. Below that it fills in and
-              reads as "pixelation". All-caps labels are fine at 20px: no
-              tight counters, no descenders.
-           2. Pure #000 / #fff only. The spooler thresholds at 200, so #555,
-              #999 and #bbb ALL printed solid black already. Keeping them in
-              CSS only made the on-screen preview lie about the output.
-           3. No fractional or negative letter-spacing. Sub-dot tracking
-              rounds differently per glyph and looks uneven after 1-bit
-              conversion.
-           4. Borders in even px (2px). A 1px hairline is a single dot and
-              drops out at low darkness.
-           5. Explicit px line-height everywhere, so the budget below is
-              exact rather than font-metric dependent.
-
-           VERTICAL BUDGET — usable = 320 - 4 (border) - 12 (padding) = 304
-             INVENTORY   head 30 + body 130 + rows 105 + foot 36 = 301  (3 spare)
-             CUSTOMER    head 30 + body 170 + rows  67 + foot 36 = 303  (1 spare)
-           HORIZONTAL BUDGET — usable = 480 - 4 - 24 = 452
-             .lbl-col 320 | gap 12 | .lbl-qr 120    row value = 452-118-8 = 326
-           ================================================================== */
         .lbl {
           box-sizing: border-box;
           width: 480px;
           height: 320px;
-          padding: 6px 12px;          /* was 10px 14px — bought 8px of height */
+          padding: 6px 12px;
           background: #fff;
           color: #000;
           border: 2px solid #000;
@@ -1465,7 +1390,6 @@ export default function InventoryStickerPage() {
           font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
         }
 
-        /* ---------- HEAD — 30px ---------- */
         .lbl-head {
           display: flex;
           align-items: center;
@@ -1481,21 +1405,18 @@ export default function InventoryStickerPage() {
           width: auto;
           max-width: 150px;
           object-fit: contain;
-          /* If divvylogo-nav.svg contains gradients or midtones they will
-             threshold into blobs. Export a pure-black variant and delete
-             this filter if the mark looks muddy on paper. */
           filter: grayscale(1) contrast(3);
         }
         .lbl-tag {
           font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-          font-size: 24px;            /* 20 -> 24   (7.1pt -> 8.5pt) */
+          font-size: 24px;
           line-height: 24px;
           font-weight: 700;
-          letter-spacing: 0;          /* was -0.5px */
+          letter-spacing: 0;
           white-space: nowrap;
         }
         .lbl-slip {
-          font-size: 22px;            /* 17 -> 22   (6.0pt -> 7.8pt, all-caps) */
+          font-size: 22px;
           line-height: 22px;
           font-weight: 800;
           letter-spacing: 1px;
@@ -1506,7 +1427,6 @@ export default function InventoryStickerPage() {
           white-space: nowrap;
         }
 
-        /* ---------- BODY — 130px inventory / 170px customer ---------- */
         .lbl-body {
           display: flex;
           align-items: flex-start;
@@ -1553,13 +1473,13 @@ export default function InventoryStickerPage() {
         .lbl-sub {
           margin-top: 2px;
           padding-top: 4px;
-          border-top: 2px dashed #000;   /* was #999 — printed black anyway */
+          border-top: 2px dashed #000;
           min-width: 0;
           flex: 0 0 auto;
         }
         .lbl-model {
           display: block;
-          font-size: 26px;            /* 20 -> 26   (7.1pt -> 9.2pt) */
+          font-size: 26px;
           line-height: 30px;
           font-weight: 700;
           white-space: nowrap;
@@ -1567,21 +1487,20 @@ export default function InventoryStickerPage() {
           text-overflow: ellipsis;
         }
 
-        /* ---------- SHARED TYPE ---------- */
         .lbl-k {
           display: block;
-          font-size: 20px;            /* 13 -> 20   (4.6pt -> 7.1pt) */
+          font-size: 20px;
           line-height: 20px;
           font-weight: 600;
           letter-spacing: 0.5px;
           text-transform: uppercase;
-          color: #000;                /* was #555 */
+          color: #000;
         }
         .lbl-k-alert { color: #000; }
         .lbl-v {
           color: #000; 
           display: block;
-          font-size: 28px;            /* 22 -> 28   (7.8pt -> 9.9pt) */
+          font-size: 28px;
           line-height: 32px;
           font-weight: 800;
           white-space: nowrap;
@@ -1591,16 +1510,15 @@ export default function InventoryStickerPage() {
         .lbl-cust-id {
           display: block;
           font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-          font-size: 28px;            /* 25 -> 28   (8.9pt -> 9.9pt) */
+          font-size: 28px;
           line-height: 32px;
           font-weight: 800;
-          letter-spacing: 0;          /* was -0.5px */
+          letter-spacing: 0;
           white-space: nowrap;
         }
         .lbl-mono { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
         .lbl-italic { font-style: italic; }
 
-        /* ---------- ROWS — 105px inventory (3) / 67px customer (2) ---------- */
         .lbl-rows {
           flex: 0 0 auto;
           height: 95px;
@@ -1608,7 +1526,7 @@ export default function InventoryStickerPage() {
           flex-direction: column;
           gap: 2px;
           padding-top: 5px;
-          border-top: 2px solid #000;    /* was #bbb */
+          border-top: 2px solid #000;
           overflow: hidden;
         }
         .lbl-rows-cust { height: 67px; }
@@ -1622,12 +1540,12 @@ export default function InventoryStickerPage() {
           flex: 0 0 auto;
         }
         .lbl-rows-cust .lbl-row { height: 28px; }
-        .lbl-row .lbl-k { flex: 0 0 118px; }   /* was 95px — fits "BOOKED IN" at 20px */
+        .lbl-row .lbl-k { flex: 0 0 118px; }
 
         .lbl-row-v {
           flex: 1 1 auto;
           min-width: 0;
-          font-size: 24px;            /* 17 -> 24   (6.0pt -> 8.5pt) */
+          font-size: 24px;
           line-height: 28px;
           font-weight: 600;
           white-space: nowrap;
@@ -1635,7 +1553,6 @@ export default function InventoryStickerPage() {
           text-overflow: ellipsis;
         }
 
-        /* ---------- QR ---------- */
         .lbl-qr {
           flex: 0 0 120px;
           width: 120px;
@@ -1650,7 +1567,6 @@ export default function InventoryStickerPage() {
           display: block;
         }
 
-        /* ---------- FOOT — 36px ---------- */
         .lbl-foot {
           flex: 0 0 auto;
           height: 36px;
@@ -1662,7 +1578,7 @@ export default function InventoryStickerPage() {
           padding-top: 4px;
           border-top: 2px solid #000;
           font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-          font-size: 22px;            /* 15 -> 22   (5.3pt -> 7.8pt) */
+          font-size: 22px;
           line-height: 26px;
           font-weight: 700;
           white-space: nowrap;
@@ -1678,19 +1594,13 @@ export default function InventoryStickerPage() {
         .lbl-price {
           background: #000;
           color: #fff;
-          padding: 0 6  px;
+          padding: 0 6px;
           border-radius: 4px;
           font-weight: 800;
-          font-size: 26px;            /* 18 -> 22 */
+          font-size: 26px;
           line-height: 30px;
-          /* NOTE: reversed text is the most fragile element on a thermal
-             label — the white counters can close up when darkness is high.
-             If the price prints as a black blob, swap to an outlined badge:
-               background: #fff; color: #000; border: 2px solid #000;
-             and drop font-size to 20px to keep the badge the same width. */
         }
 
-        /* ---------- PREVIEW CHROME (screen only, not captured) ---------- */
         .lbl-frame {
           display: flex;
           flex-direction: column;
@@ -1706,14 +1616,13 @@ export default function InventoryStickerPage() {
           text-align: center;
           padding: 4px;
         }
-        .lbl-foot-inv    { height: 40px; }       
+        .lbl-foot-inv { height: 40px; }       
         .lbl-rupee {
-  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  font-weight: 700;      /* badge is 800 — lighter keeps the bars from merging */
-  font-size: 28px;       /* 2px over the digits so its bars get more dots */
-  margin-right: 2px;
-}
-
+          font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+          font-weight: 700;
+          font-size: 28px;
+          margin-right: 2px;
+        }
       `}</style>
     </div>
   );

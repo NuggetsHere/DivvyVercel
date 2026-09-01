@@ -1,3 +1,4 @@
+//src/app/blogadmin/page.js
 'use client';
 import { useState } from 'react';
 
